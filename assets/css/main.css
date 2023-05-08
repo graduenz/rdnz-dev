@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=League+Spartan:wght@700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #f3f7fa;
+}
+
+.rich-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.rich-text li {
+  list-style: disc;
+  margin-left: 16px;
+}
+
+@media (min-width: 768px) {
+  .rich-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}

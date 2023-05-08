@@ -1,0 +1,43 @@
+{
+  "id": "work_experience",
+  "label": "Work Experience",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "role": {
+        "type": "Text",
+        "config": { "label": "Role", "placeholder": "" }
+      },
+      "company": {
+        "type": "Text",
+        "config": { "label": "Company", "placeholder": "" }
+      },
+      "image": {
+        "type": "Image",
+        "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+      },
+      "since": {
+        "type": "Date",
+        "config": { "label": "Since", "placeholder": "" }
+      },
+      "until": {
+        "type": "Date",
+        "config": { "label": "Until", "placeholder": "" }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "location": {
+        "type": "Text",
+        "config": { "label": "Location", "placeholder": "" }
+      }
+    }
+  }
+}

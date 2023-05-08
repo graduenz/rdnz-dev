@@ -1,0 +1,5 @@
+{
+  "repositoryName": "rdnz-dev",
+  "adapter": "@slicemachine/adapter-nuxt",
+  "libraries": ["./slices"]
+}
