@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     endpoint: "rdnz-dev"
   },
 
-  ssr: false,
+  ssr: true,
 
   css: ['~/assets/css/main.css'],
 
