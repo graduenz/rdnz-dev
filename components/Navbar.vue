@@ -38,7 +38,7 @@
               class="my-4 md:my-0"
               >
               <a
-                href="#"
+                href="https://tally.so/r/woDbrx"
                 class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded text-sm px-5 py-3 mx-3 md:mx-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                 >
                 Contact
