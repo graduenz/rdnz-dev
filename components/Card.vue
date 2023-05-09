@@ -14,13 +14,15 @@
           </div>
         </div>
         <div v-if="toggling">
-          <ChevronUpIcon
-            v-if="expanded"
+          <font-awesome-icon
+            v-show="expanded"
+            :icon="['fas', 'chevron-up']"
             @click="collapse"
             class="h-6 w-6 text-gray-500 cursor-pointer"
             />
-          <ChevronDownIcon
-            v-else
+          <font-awesome-icon
+            v-show="!expanded"
+            :icon="['fas', 'chevron-down']"
             @click="expand"
             class="h-6 w-6 text-gray-500 cursor-pointer"
             />
@@ -32,23 +34,20 @@
         >
         <slot name="content"></slot>
       </div>
+      <div class="mt-4 flex flex-row space-x-4 text-xl text-gray-500">
+        <slot name="links"></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/vue/20/solid";
-
 export default {
   props: {
     toggling: {
       type: Boolean,
       required: true,
     },
-  },
-  components: {
-    ChevronDownIcon,
-    ChevronUpIcon,
   },
   setup() {
     const expanded = ref(false);

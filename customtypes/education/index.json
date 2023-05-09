@@ -9,6 +9,10 @@
         "type": "Text",
         "config": { "label": "Name", "placeholder": "" }
       },
+      "degree": {
+        "type": "Text",
+        "config": { "label": "Degree", "placeholder": "" }
+      },
       "school": {
         "type": "Text",
         "config": { "label": "School", "placeholder": "" }

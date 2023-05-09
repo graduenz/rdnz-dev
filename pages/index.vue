@@ -5,4 +5,7 @@
   <Homepage />
   <About />
   <Experience />
+  <Projects />
+  <Education />
+  <Footer />
 </template>

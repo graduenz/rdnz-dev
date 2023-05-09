@@ -18,6 +18,11 @@ body {
   margin-left: 16px;
 }
 
+.rich-text a {
+  color: #304ffe;
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .rich-text h2 {
     font-size: 2rem;

@@ -60,6 +60,17 @@ interface EducationDocumentData {
    */
   name: prismicT.KeyTextField;
   /**
+   * Degree field in *Education*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.degree
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  degree: prismicT.KeyTextField;
+  /**
    * School field in *Education*
    *
    * - **Field Type**: Text
@@ -195,6 +206,17 @@ interface ProjectDocumentData {
    */
   image: prismicT.ImageField<never>;
   /**
+   * Type field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.type
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  type: prismicT.KeyTextField;
+  /**
    * Description field in *Project*
    *
    * - **Field Type**: Rich Text
@@ -208,25 +230,25 @@ interface ProjectDocumentData {
   /**
    * Project URL field in *Project*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: project.project_url
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  project_url: prismicT.LinkField;
+  project_url: prismicT.KeyTextField;
   /**
    * Repository URL field in *Project*
    *
-   * - **Field Type**: Link
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: project.repository_url
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  repository_url: prismicT.LinkField;
+  repository_url: prismicT.KeyTextField;
 }
 /**
  * Project document from Prismic

@@ -13,6 +13,10 @@
         "type": "Image",
         "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
       },
+      "type": {
+        "type": "Text",
+        "config": { "label": "Type", "placeholder": "" }
+      },
       "description": {
         "type": "StructuredText",
         "config": {
@@ -23,16 +27,12 @@
         }
       },
       "project_url": {
-        "type": "Link",
-        "config": { "label": "Project URL", "placeholder": "", "select": null }
+        "type": "Text",
+        "config": { "label": "Project URL", "placeholder": "" }
       },
       "repository_url": {
-        "type": "Link",
-        "config": {
-          "label": "Repository URL",
-          "placeholder": "",
-          "select": null
-        }
+        "type": "Text",
+        "config": { "label": "Repository URL", "placeholder": "" }
       }
     }
   }
