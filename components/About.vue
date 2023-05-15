@@ -1,9 +1,9 @@
 <template>
   <div class="bg-white pb-8">
-    <div class="max-w-screen-xl mx-auto px-4 py-8">
+    <div class="max-w-screen-xl mx-auto px-4 pb-8">
       <h1
         id="about"
-        class="scroll-m-16 pb-8 pt-16 text-4xl md:text-6xl font-ls font-bold text-center whitespace-nowrap dark:text-white"
+        class="scroll-m-16 pb-8 pt-16 text-5xl md:text-6xl font-ls font-bold text-center whitespace-nowrap dark:text-white"
         >
         {{ document?.data.title }}
       </h1>

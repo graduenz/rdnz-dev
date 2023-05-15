@@ -1,19 +1,19 @@
 <template>
   <div class="bg-white">
-    <div class="max-w-screen-xl h-screen flex flex-col flex-wrap items-center justify-center mx-auto px-4 py-8">
+    <div class="max-w-screen-xl h-screen flex flex-col flex-wrap items-center justify-center mx-auto space-y-6 md:space-y-10 px-4 py-8">
       <img
         src="~/assets/img/memoji_laptop.png"
         alt="Me"
-        class="h-auto w-32 mb-10"
+        class="h-auto w-32"
         />
       <span
-        class="text-5xl md:text-6xl font-ls font-black whitespace-nowrap mb-10"
+        class="text-5xl md:text-6xl font-ls font-black whitespace-nowrap"
         >
         {{ document?.data.title }}
       </span>
       <prismic-rich-text
         :field="document?.data.introduction"
-        class="text-lg md:w-[450px] px-1 md:px-0 text-center mb-10"
+        class="text-lg md:w-[450px] px-1 md:px-0 text-center"
         />
       <a
         @click="getStarted"

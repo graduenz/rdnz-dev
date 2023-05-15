@@ -34,7 +34,7 @@
         >
         <slot name="content"></slot>
       </div>
-      <div class="mt-4 flex flex-row space-x-4 text-xl text-gray-500">
+      <div class="mt-4 flex flex-row space-x-4 text-gray-700">
         <slot name="links"></slot>
       </div>
     </div>
