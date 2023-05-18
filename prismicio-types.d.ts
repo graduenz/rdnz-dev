@@ -295,15 +295,15 @@ interface SectionDocumentData {
  *
  */
 type SectionDocumentDataSlicesSlice =
+  | EducationSlice
   | ProjectSlice
   | WorkExperienceSlice
-  | EducationSlice
   | TextSlice;
 /**
  * Section document from Prismic
  *
  * - **API ID**: `section`
- * - **Repeatable**: `false`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.

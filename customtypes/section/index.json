@@ -1,7 +1,7 @@
 {
   "id": "section",
   "label": "Section",
-  "repeatable": false,
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
@@ -14,9 +14,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "education": { "type": "SharedSlice" },
             "project": { "type": "SharedSlice" },
             "work_experience": { "type": "SharedSlice" },
-            "education": { "type": "SharedSlice" },
             "text": { "type": "SharedSlice" }
           }
         }
