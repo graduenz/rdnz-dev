@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "devDependencies": {
+    "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/prismic": "3.0.0-rc.5",
     "@nuxtjs/tailwindcss": "^6.6.7",
     "@slicemachine/adapter-nuxt": "^0.1.2",

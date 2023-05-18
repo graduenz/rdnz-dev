@@ -12,6 +12,7 @@ module.exports = {
     "./app.vue",
     "./node_modules/flowbite.{js,ts}"
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {

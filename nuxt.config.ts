@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/prismic",
     "@nuxtjs/tailwindcss",
+    "@nuxtjs/color-mode",
   ],
 
   prismic: {
@@ -21,6 +22,10 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '@fortawesome/fontawesome-svg-core/styles.css'
   ],
+
+  colorMode: {
+    classSuffix: ''
+  },
 
   postcss: {
     plugins: {

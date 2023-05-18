@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row space-x-4 items-center justify-center mx-auto text-2xl text-gray-900">
+  <div class="flex flex-row space-x-4 items-center justify-center mx-auto text-2xl text-gray-900 dark:text-gray-100">
     <a
       v-for="s in document?.data.social"
       :href="s.url"

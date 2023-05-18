@@ -2,7 +2,7 @@
   <div class="max-w-screen-xl md:w-[650px] mx-auto px-4 pb-0 md:pb-8">
     <h1
       :id="name"
-      class="scroll-m-16 pb-8 pt-16 text-5xl md:text-6xl font-ls font-bold text-center whitespace-nowrap dark:text-white"
+      class="scroll-m-16 pb-8 pt-16 text-5xl md:text-6xl font-ls font-bold text-center whitespace-nowrap dark:text-gray-100"
       >
       {{ name }}
     </h1>

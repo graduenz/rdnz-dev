@@ -28,7 +28,7 @@
       <template #content>
         <PrismicRichText
           :field="slice.primary.description"
-          class="prose"
+          class="prose dark:prose-invert"
           />
       </template>
     </Card>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="bg-white dark:bg-gray-900">
     <div class="max-w-screen-xl h-screen flex flex-col flex-wrap items-center justify-center mx-auto space-y-6 md:space-y-10 px-4 py-8">
       <img
         src="~/assets/img/memoji_laptop.png"
@@ -7,17 +7,17 @@
         class="h-auto w-32"
         />
       <span
-        class="text-5xl md:text-6xl font-ls font-black whitespace-nowrap"
+        class="text-5xl md:text-6xl font-ls font-black whitespace-nowrap dark:text-gray-100"
         >
         {{ document?.data.title }}
       </span>
-      <prismic-rich-text
+      <PrismicRichText
         :field="document?.data.introduction"
-        class="prose md:prose-lg md:w-[450px] px-1 md:px-0 text-center"
+        class="prose prose-lg md:w-[450px] px-1 md:px-0 text-center dark:prose-invert"
         />
       <a
         @click="getStarted"
-        class="cursor-pointer text-white drop-shadow-lg bg-mine hover:bg-mine-tonal font-bold rounded px-6 py-4 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        class="cursor-pointer text-white drop-shadow-lg bg-mine hover:bg-mine-tonal font-bold rounded px-6 py-4"
         >
         {{ document?.data.scroll_button_text }}
       </a>
@@ -41,7 +41,7 @@ const { data: document } = await useAsyncData("homepage", async () => {
 });
 
 const getStarted = () => {
-  const el = window.document.getElementById('about');
+  const el = window.document.getElementById('About');
   el?.scrollIntoView({ behavior: 'smooth' });
 };
 </script>

@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-white rounded shadow w-full p-6 flex flex-row">
+  <div class="bg-white rounded shadow w-full p-6 flex flex-row dark:bg-gray-800">
     <div class="basis-1/12 pt-1">
       <slot name="left"></slot>
     </div>
     <div class="basis-11/12 pl-4 flex flex-col">
       <div class="flex flex-row">
         <div class="grow">
-          <div class="text-lg font-medium">
+          <div class="text-lg font-medium dark:text-gray-100">
             <slot name="title"></slot>
           </div>
           <div class="text-gray-500">
@@ -34,7 +34,7 @@
         >
         <slot name="content"></slot>
       </div>
-      <div class="mt-4 flex flex-row space-x-4 text-gray-700">
+      <div class="mt-4 flex flex-row space-x-4 text-gray-500">
         <slot name="links"></slot>
       </div>
     </div>
