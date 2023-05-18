@@ -33,7 +33,7 @@
           <template #content>
             <prismic-rich-text
               :field="exp.data.description"
-              class="rich-text text-left flex flex-col"
+              class="prose text-left flex flex-col"
               />
           </template>
         </Card>

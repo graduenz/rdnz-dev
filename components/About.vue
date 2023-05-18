@@ -9,7 +9,7 @@
       </h1>
       <prismic-rich-text
         :field="document?.data.content"
-        class="rich-text text-justify text-lg md:w-[650px] px-1 md:px-0 flex flex-col justify-center mx-auto space-y-8"
+        class="prose md:prose-lg text-justify text-lg md:w-[650px] px-1 md:px-0 flex flex-col justify-center mx-auto space-y-8"
         />
     </div>
   </div>

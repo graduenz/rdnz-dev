@@ -13,7 +13,7 @@
       </span>
       <prismic-rich-text
         :field="document?.data.introduction"
-        class="text-lg md:w-[450px] px-1 md:px-0 text-center"
+        class="prose md:prose-lg md:w-[450px] px-1 md:px-0 text-center"
         />
       <a
         @click="getStarted"
