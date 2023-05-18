@@ -1,0 +1,25 @@
+{
+  "id": "section",
+  "label": "Section",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": { "label": "Name", "placeholder": "" }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "project": { "type": "SharedSlice" },
+            "work_experience": { "type": "SharedSlice" },
+            "education": { "type": "SharedSlice" }
+          }
+        }
+      }
+    }
+  }
+}

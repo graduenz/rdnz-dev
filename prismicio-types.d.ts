@@ -265,6 +265,119 @@ export type ProjectDocument<Lang extends string = string> =
     "project",
     Lang
   >;
+/** Content for Section documents */
+interface SectionDocumentData {
+  /**
+   * Name field in *Section*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismicT.KeyTextField;
+  /**
+   * Slice Zone field in *Section*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: section.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<SectionDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Section → Slice Zone*
+ *
+ */
+type SectionDocumentDataSlicesSlice =
+  | ProjectSlice
+  | WorkExperienceSlice
+  | EducationSlice;
+/**
+ * Section document from Prismic
+ *
+ * - **API ID**: `section`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SectionDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<
+    Simplify<SectionDocumentData>,
+    "section",
+    Lang
+  >;
+/** Content for Settings documents */
+interface SettingsDocumentData {
+  /**
+   * Social field in *Settings*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  social: prismicT.GroupField<Simplify<SettingsDocumentDataSocialItem>>;
+}
+/**
+ * Item in Settings → Social
+ *
+ */
+export interface SettingsDocumentDataSocialItem {
+  /**
+   * Name field in *Settings → Social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social[].name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismicT.KeyTextField;
+  /**
+   * Icon field in *Settings → Social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social[].icon
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  icon: prismicT.KeyTextField;
+  /**
+   * Url field in *Settings → Social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.social[].url
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  url: prismicT.KeyTextField;
+}
+/**
+ * Settings document from Prismic
+ *
+ * - **API ID**: `settings`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SettingsDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<
+    Simplify<SettingsDocumentData>,
+    "settings",
+    Lang
+  >;
 /** Content for Social documents */
 interface SocialDocumentData {
   /**
@@ -416,8 +529,321 @@ export type AllDocumentTypes =
   | EducationDocument
   | HomepageDocument
   | ProjectDocument
+  | SectionDocument
+  | SettingsDocument
   | SocialDocument
   | WorkExperienceDocument;
+/**
+ * Primary content in Education → Primary
+ *
+ */
+interface EducationSliceDefaultPrimary {
+  /**
+   * Name field in *Education → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismicT.KeyTextField;
+  /**
+   * Degree field in *Education → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.degree
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  degree: prismicT.KeyTextField;
+  /**
+   * School field in *Education → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.school
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  school: prismicT.KeyTextField;
+  /**
+   * Image field in *Education → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+  /**
+   * Since field in *Education → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.since
+   * - **Documentation**: https://prismic.io/docs/core-concepts/date
+   *
+   */
+  since: prismicT.DateField;
+}
+/**
+ * Default variation for Education Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EducationSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<EducationSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Education*
+ *
+ */
+type EducationSliceVariation = EducationSliceDefault;
+/**
+ * Education Shared Slice
+ *
+ * - **API ID**: `education`
+ * - **Description**: `Education`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EducationSlice = prismicT.SharedSlice<
+  "education",
+  EducationSliceVariation
+>;
+/**
+ * Primary content in Project → Primary
+ *
+ */
+interface ProjectSliceDefaultPrimary {
+  /**
+   * Name field in *Project → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.name
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismicT.KeyTextField;
+  /**
+   * Image field in *Project → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+  /**
+   * Type field in *Project → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.type
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  type: prismicT.KeyTextField;
+  /**
+   * Project URL field in *Project → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.project_url
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  project_url: prismicT.KeyTextField;
+  /**
+   * Repository URL field in *Project → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.repository_url
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  repository_url: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Project Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<ProjectSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Project*
+ *
+ */
+type ProjectSliceVariation = ProjectSliceDefault;
+/**
+ * Project Shared Slice
+ *
+ * - **API ID**: `project`
+ * - **Description**: `Project`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectSlice = prismicT.SharedSlice<
+  "project",
+  ProjectSliceVariation
+>;
+/**
+ * Primary content in Text → Primary
+ *
+ */
+interface TextSliceDefaultPrimary {
+  /**
+   * Text field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismicT.RichTextField;
+}
+/**
+ * Default variation for Text Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<TextSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Text*
+ *
+ */
+type TextSliceVariation = TextSliceDefault;
+/**
+ * Text Shared Slice
+ *
+ * - **API ID**: `text`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
+/**
+ * Primary content in WorkExperience → Primary
+ *
+ */
+interface WorkExperienceSliceDefaultPrimary {
+  /**
+   * Role field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.role
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  role: prismicT.KeyTextField;
+  /**
+   * Company field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.company
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  company: prismicT.KeyTextField;
+  /**
+   * Image field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+  /**
+   * Since field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.since
+   * - **Documentation**: https://prismic.io/docs/core-concepts/date
+   *
+   */
+  since: prismicT.DateField;
+  /**
+   * Until field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.until
+   * - **Documentation**: https://prismic.io/docs/core-concepts/date
+   *
+   */
+  until: prismicT.DateField;
+  /**
+   * Location field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.location
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  location: prismicT.KeyTextField;
+}
+/**
+ * Default variation for WorkExperience Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WorkExperienceSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<WorkExperienceSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *WorkExperience*
+ *
+ */
+type WorkExperienceSliceVariation = WorkExperienceSliceDefault;
+/**
+ * WorkExperience Shared Slice
+ *
+ * - **API ID**: `work_experience`
+ * - **Description**: `WorkExperience`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type WorkExperienceSlice = prismicT.SharedSlice<
+  "work_experience",
+  WorkExperienceSliceVariation
+>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -435,11 +861,33 @@ declare module "@prismicio/client" {
       HomepageDocument,
       ProjectDocumentData,
       ProjectDocument,
+      SectionDocumentData,
+      SectionDocumentDataSlicesSlice,
+      SectionDocument,
+      SettingsDocumentData,
+      SettingsDocumentDataSocialItem,
+      SettingsDocument,
       SocialDocumentData,
       SocialDocument,
       WorkExperienceDocumentData,
       WorkExperienceDocument,
       AllDocumentTypes,
+      EducationSliceDefaultPrimary,
+      EducationSliceDefault,
+      EducationSliceVariation,
+      EducationSlice,
+      ProjectSliceDefaultPrimary,
+      ProjectSliceDefault,
+      ProjectSliceVariation,
+      ProjectSlice,
+      TextSliceDefaultPrimary,
+      TextSliceDefault,
+      TextSliceVariation,
+      TextSlice,
+      WorkExperienceSliceDefaultPrimary,
+      WorkExperienceSliceDefault,
+      WorkExperienceSliceVariation,
+      WorkExperienceSlice,
     };
   }
 }
