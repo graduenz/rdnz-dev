@@ -1,13 +1,13 @@
 <template>
-  <section
+  <div
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
     <PrismicRichText
       :field="slice.primary.text"
-      :class="[slice.variation == 'textLarge' ? 'prose md:prose-lg' : 'prose', 'text-justify']"
+      :class="[slice.variation == 'textLarge' ? 'prose prose-lg' : 'prose', 'text-justify']"
       />
-  </section>
+</div>
 </template>
 
 <script setup lang="ts">

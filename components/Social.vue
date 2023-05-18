@@ -1,30 +1,25 @@
 <template>
-  <div class="flex flex-row space-x-4 items-center justify-center mx-auto text-2xl text-gray-700">
+  <div class="flex flex-row space-x-4 items-center justify-center mx-auto text-2xl text-gray-900">
     <a
-      v-for="s in social"
-      :href="s.data.url"
-      :title="s.data.name"
+      v-for="s in document?.data.social"
+      :href="s.url"
+      :title="s.name"
     >
-    <font-awesome-icon :icon="['fab', s.data.icon]" />
+    <font-awesome-icon :icon="['fab', s.icon]" />
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
-import { SocialDocument } from '~/prismicio-types';
+import { SettingsDocument } from '~/prismicio-types';
 
 const { client } = usePrismic();
 
-const { data: social } = await useAsyncData("social", async () => {
-  const social = await client.getAllByType<SocialDocument>("social", {
-    orderings: {
-        field: 'my.social.name',
-        direction: 'asc',
-    }
-  });
+const { data: document } = await useAsyncData("settings", async () => {
+  const documents = await client.getAllByType<SettingsDocument>("settings");
 
-  if (social) {
-    return social;
+  if (documents && documents.length > 0) {
+    return documents[0];
   } else {
     throw createError({ statusCode: 404, message: "Page not found" });
   }

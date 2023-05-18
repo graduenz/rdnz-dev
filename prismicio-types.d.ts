@@ -6,90 +6,6 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Education documents */
-interface EducationDocumentData {
-  /**
-   * Name field in *Education*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  name: prismicT.KeyTextField;
-  /**
-   * Degree field in *Education*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.degree
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  degree: prismicT.KeyTextField;
-  /**
-   * School field in *Education*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.school
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  school: prismicT.KeyTextField;
-  /**
-   * Image field in *Education*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  image: prismicT.ImageField<never>;
-  /**
-   * Description field in *Education*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
-  /**
-   * Since field in *Education*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.since
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/date
-   *
-   */
-  since: prismicT.DateField;
-}
-/**
- * Education document from Prismic
- *
- * - **API ID**: `education`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type EducationDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<EducationDocumentData>,
-    "education",
-    Lang
-  >;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
   /**
@@ -139,90 +55,6 @@ export type HomepageDocument<Lang extends string = string> =
   prismicT.PrismicDocumentWithoutUID<
     Simplify<HomepageDocumentData>,
     "homepage",
-    Lang
-  >;
-/** Content for Project documents */
-interface ProjectDocumentData {
-  /**
-   * Name field in *Project*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  name: prismicT.KeyTextField;
-  /**
-   * Image field in *Project*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  image: prismicT.ImageField<never>;
-  /**
-   * Type field in *Project*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.type
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  type: prismicT.KeyTextField;
-  /**
-   * Description field in *Project*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
-  /**
-   * Project URL field in *Project*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.project_url
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  project_url: prismicT.KeyTextField;
-  /**
-   * Repository URL field in *Project*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.repository_url
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  repository_url: prismicT.KeyTextField;
-}
-/**
- * Project document from Prismic
- *
- * - **API ID**: `project`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ProjectDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<ProjectDocumentData>,
-    "project",
     Lang
   >;
 /** Content for Section documents */
@@ -339,160 +171,10 @@ export type SettingsDocument<Lang extends string = string> =
     "settings",
     Lang
   >;
-/** Content for Social documents */
-interface SocialDocumentData {
-  /**
-   * Name field in *Social*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: social.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  name: prismicT.KeyTextField;
-  /**
-   * Icon field in *Social*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: social.icon
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  icon: prismicT.KeyTextField;
-  /**
-   * Url field in *Social*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: social.url
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  url: prismicT.KeyTextField;
-}
-/**
- * Social document from Prismic
- *
- * - **API ID**: `social`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type SocialDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<SocialDocumentData>,
-    "social",
-    Lang
-  >;
-/** Content for Work Experience documents */
-interface WorkExperienceDocumentData {
-  /**
-   * Role field in *Work Experience*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.role
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  role: prismicT.KeyTextField;
-  /**
-   * Company field in *Work Experience*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.company
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  company: prismicT.KeyTextField;
-  /**
-   * Image field in *Work Experience*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  image: prismicT.ImageField<never>;
-  /**
-   * Since field in *Work Experience*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.since
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/date
-   *
-   */
-  since: prismicT.DateField;
-  /**
-   * Until field in *Work Experience*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.until
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/date
-   *
-   */
-  until: prismicT.DateField;
-  /**
-   * Description field in *Work Experience*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.description
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
-  /**
-   * Location field in *Work Experience*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.location
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  location: prismicT.KeyTextField;
-}
-/**
- * Work Experience document from Prismic
- *
- * - **API ID**: `work_experience`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type WorkExperienceDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<WorkExperienceDocumentData>,
-    "work_experience",
-    Lang
-  >;
 export type AllDocumentTypes =
-  | EducationDocument
   | HomepageDocument
-  | ProjectDocument
   | SectionDocument
-  | SettingsDocument
-  | SocialDocument
-  | WorkExperienceDocument;
+  | SettingsDocument;
 /**
  * Primary content in Education → Primary
  *
@@ -872,22 +554,14 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
-      EducationDocumentData,
-      EducationDocument,
       HomepageDocumentData,
       HomepageDocument,
-      ProjectDocumentData,
-      ProjectDocument,
       SectionDocumentData,
       SectionDocumentDataSlicesSlice,
       SectionDocument,
       SettingsDocumentData,
       SettingsDocumentDataSocialItem,
       SettingsDocument,
-      SocialDocumentData,
-      SocialDocument,
-      WorkExperienceDocumentData,
-      WorkExperienceDocument,
       AllDocumentTypes,
       EducationSliceDefaultPrimary,
       EducationSliceDefault,

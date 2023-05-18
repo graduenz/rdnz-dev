@@ -3,15 +3,51 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    Placeholder component for project (variation: {{ slice.variation }}) Slices
+    <Card
+      :toggling="slice.primary.description && slice.primary.description.length > 0"
+      >
+      <template #left>
+        <img
+          :src="slice.primary.image.url"
+          :alt="slice.primary.name"
+          class="rounded"
+          />
+      </template>
+      <template #title>
+        {{ slice.primary.name }}
+      </template>
+      <template #subtitle>
+        <p>
+          {{ slice.primary.type }}
+        </p>
+      </template>
+      <template #content>
+        <PrismicRichText
+          :field="slice.primary.description"
+          class="prose"
+          />
+      </template>
+      <template #links>
+        <a
+          v-if="slice.primary.project_url"
+          :href="slice.primary.project_url"
+            >
+            <font-awesome-icon :icon="['fas', 'link']" />
+        </a>
+        <a
+          v-if="slice.primary.repository_url"
+          :href="slice.primary.repository_url"
+            >
+            <font-awesome-icon :icon="['fab', 'github']" />
+        </a>
+      </template>
+    </Card>
   </section>
 </template>
 
 <script setup lang="ts">
 import { Content } from "@prismicio/client";
 
-// The array passed to `getSliceComponentProps` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
 defineProps(
   getSliceComponentProps<Content.ProjectSlice>([
     "slice",

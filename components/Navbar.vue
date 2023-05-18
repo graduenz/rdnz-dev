@@ -54,10 +54,10 @@
 <script setup lang="ts">
 const menu = [
   ['Home', ''],
-  ['About', '#about'],
-  ['Experience', '#experience'],
-  ['Projects', '#projects'],
-  ['Education', '#education'],
+  ['About', '#About'],
+  ['Experience', '#Experience'],
+  ['Projects', '#Projects'],
+  ['Education', '#Education'],
 ].map(arr => ({
   label: arr[0],
   targetElementSelector: arr[1],
