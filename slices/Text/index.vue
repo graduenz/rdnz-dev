@@ -3,7 +3,10 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    Placeholder component for text (variation: {{ slice.variation }}) Slices
+    <PrismicRichText
+      :field="slice.primary.text"
+      :class="[slice.variation == 'textLarge' ? 'prose md:prose-lg' : 'prose', 'text-justify']"
+      />
   </section>
 </template>
 

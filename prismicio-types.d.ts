@@ -6,46 +6,6 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
-/** Content for About Page documents */
-interface AboutPageDocumentData {
-  /**
-   * Title field in *About Page*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_page.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  title: prismicT.KeyTextField;
-  /**
-   * Content field in *About Page*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_page.content
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  content: prismicT.RichTextField;
-}
-/**
- * About Page document from Prismic
- *
- * - **API ID**: `about_page`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type AboutPageDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<AboutPageDocumentData>,
-    "about_page",
-    Lang
-  >;
 /** Content for Education documents */
 interface EducationDocumentData {
   /**
@@ -526,7 +486,6 @@ export type WorkExperienceDocument<Lang extends string = string> =
     Lang
   >;
 export type AllDocumentTypes =
-  | AboutPageDocument
   | EducationDocument
   | HomepageDocument
   | ProjectDocument
@@ -756,10 +715,39 @@ export type TextSliceDefault = prismicT.SharedSliceVariation<
   never
 >;
 /**
+ * Primary content in Text → Primary
+ *
+ */
+interface TextSliceTextLargePrimary {
+  /**
+   * Text field in *Text → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismicT.RichTextField;
+}
+/**
+ * Text - Large variation for Text Slice
+ *
+ * - **API ID**: `textLarge`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextSliceTextLarge = prismicT.SharedSliceVariation<
+  "textLarge",
+  Simplify<TextSliceTextLargePrimary>,
+  never
+>;
+/**
  * Slice variation for *Text*
  *
  */
-type TextSliceVariation = TextSliceDefault;
+type TextSliceVariation = TextSliceDefault | TextSliceTextLarge;
 /**
  * Text Shared Slice
  *
@@ -884,8 +872,6 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
-      AboutPageDocumentData,
-      AboutPageDocument,
       EducationDocumentData,
       EducationDocument,
       HomepageDocumentData,
@@ -913,6 +899,8 @@ declare module "@prismicio/client" {
       ProjectSlice,
       TextSliceDefaultPrimary,
       TextSliceDefault,
+      TextSliceTextLargePrimary,
+      TextSliceTextLarge,
       TextSliceVariation,
       TextSlice,
       WorkExperienceSliceDefaultPrimary,
