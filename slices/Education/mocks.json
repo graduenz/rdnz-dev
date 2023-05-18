@@ -45,6 +45,17 @@
 				"__TYPE__": "FieldContent",
 				"type": "Date",
 				"value": "2013-10-07"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem ad Lorem magna elit laborum qui. Officia magna labore aute adipisicing pariatur."
+						}
+					}
+				]
 			}
 		},
 		"items": []

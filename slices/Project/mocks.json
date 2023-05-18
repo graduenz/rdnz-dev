@@ -45,6 +45,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "route",
 				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In deserunt irure consequat quis anim fugiat laboris adipisicing deserunt in tempor minim irure. Ipsum labore exercitation esse anim proident laboris cupidatat amet ea eiusmod anim excepteur sint velit est."
+						}
+					}
+				]
 			}
 		},
 		"items": []

@@ -50,6 +50,17 @@
 				"__TYPE__": "FieldContent",
 				"value": "carbon",
 				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis esse fugiat sint eu adipisicing dolore exercitation sint Lorem laboris minim cupidatat."
+						}
+					}
+				]
 			}
 		},
 		"items": []

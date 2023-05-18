@@ -16,7 +16,8 @@
           "choices": {
             "project": { "type": "SharedSlice" },
             "work_experience": { "type": "SharedSlice" },
-            "education": { "type": "SharedSlice" }
+            "education": { "type": "SharedSlice" },
+            "text": { "type": "SharedSlice" }
           }
         }
       }

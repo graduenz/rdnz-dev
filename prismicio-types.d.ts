@@ -297,7 +297,8 @@ interface SectionDocumentData {
 type SectionDocumentDataSlicesSlice =
   | ProjectSlice
   | WorkExperienceSlice
-  | EducationSlice;
+  | EducationSlice
+  | TextSlice;
 /**
  * Section document from Prismic
  *
@@ -588,6 +589,16 @@ interface EducationSliceDefaultPrimary {
    *
    */
   since: prismicT.DateField;
+  /**
+   * Description field in *Education → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: education.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
 }
 /**
  * Default variation for Education Slice
@@ -674,6 +685,16 @@ interface ProjectSliceDefaultPrimary {
    *
    */
   repository_url: prismicT.KeyTextField;
+  /**
+   * Description field in *Project → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
 }
 /**
  * Default variation for Project Slice
@@ -813,6 +834,16 @@ interface WorkExperienceSliceDefaultPrimary {
    *
    */
   location: prismicT.KeyTextField;
+  /**
+   * Description field in *WorkExperience → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_experience.primary.description
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
 }
 /**
  * Default variation for WorkExperience Slice
