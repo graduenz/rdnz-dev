@@ -368,6 +368,28 @@ export type ProjectSlice = prismicT.SharedSlice<
   ProjectSliceVariation
 >;
 /**
+ *
+ */
+  /**
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  text: prismicT.RichTextField;
+}
+/**
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+  "default",
+  never
+>;
+/**
  * Primary content in Text → Primary
  *
  */
@@ -397,39 +419,10 @@ export type TextSliceDefault = prismicT.SharedSliceVariation<
   never
 >;
 /**
- * Primary content in Text → Primary
- *
- */
-interface TextSliceTextLargePrimary {
-  /**
-   * Text field in *Text → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text.primary.text
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  text: prismicT.RichTextField;
-}
-/**
- * Text - Large variation for Text Slice
- *
- * - **API ID**: `textLarge`
- * - **Description**: `Default`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type TextSliceTextLarge = prismicT.SharedSliceVariation<
-  "textLarge",
-  Simplify<TextSliceTextLargePrimary>,
-  never
->;
-/**
  * Slice variation for *Text*
  *
  */
-type TextSliceVariation = TextSliceDefault | TextSliceTextLarge;
+type TextSliceVariation = TextSliceDefault;
 /**
  * Text Shared Slice
  *
@@ -573,8 +566,6 @@ declare module "@prismicio/client" {
       ProjectSlice,
       TextSliceDefaultPrimary,
       TextSliceDefault,
-      TextSliceTextLargePrimary,
-      TextSliceTextLarge,
       TextSliceVariation,
       TextSlice,
       WorkExperienceSliceDefaultPrimary,

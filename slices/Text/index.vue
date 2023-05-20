@@ -5,9 +5,9 @@
   >
     <PrismicRichText
       :field="slice.primary.text"
-      :class="[slice.variation == 'textLarge' ? 'prose prose-lg' : 'prose', 'text-justify dark:prose-invert']"
+      class="prose prose-lg text-justify dark:prose-invert"
       />
-</div>
+  </div>
 </template>
 
 <script setup lang="ts">
