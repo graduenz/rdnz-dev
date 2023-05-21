@@ -39,7 +39,7 @@
               :key="item.label"
               >
               <a
-                @click="scrollInto(item.targetElementSelector)"
+                :href="item.href"
                 class="cursor-pointer block font-medium px-4 py-2 text-gray-600 dark:text-gray-300 rounded md:border-0 hover:text-black dark:hover:text-white md:p-0"
                 >
                 {{ item.label }}
@@ -67,26 +67,10 @@
 
 <script setup lang="ts">
 const menu = [
-  ['Home', ''],
-  ['About', '#About'],
-  ['Experience', '#Experience'],
-  ['Projects', '#Projects'],
-  ['Education', '#Education'],
+  ['Home', '/'],
+  ['About', '/about'],
 ].map(arr => ({
   label: arr[0],
-  targetElementSelector: arr[1],
+  href: arr[1],
 }));
-
-const scrollInto = (targetElementSelector: string) => {
-  if (targetElementSelector) {
-    const el = document.querySelector(targetElementSelector);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  }
-  else {
-    window.scroll({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
-};
 </script>
