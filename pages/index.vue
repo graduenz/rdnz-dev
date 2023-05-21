@@ -2,5 +2,5 @@
   <Head>
     <Title>Guilherme Raduenz</Title>
   </Head>
-  <Homepage />
+  <ArticleList />
 </template>

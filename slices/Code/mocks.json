@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"code": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum est ut eu fugiat in non."
+						}
+					}
+				]
+			},
+			"language": {
+				"__TYPE__": "FieldContent",
+				"value": "freedom",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
