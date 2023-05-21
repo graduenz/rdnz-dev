@@ -1,6 +1,6 @@
 <template>
   <span
-    class="cursor-pointer block text-lg font-medium px-4 py-2 text-gray-500 rounded md:border-0 hover:text-black dark:hover:text-white md:p-0"
+    class="cursor-pointer block text-lg font-medium px-4 py-2 text-gray-500 rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all"
     @click="toggleTheme"
     >
     <font-awesome-icon :icon="['fas', isDarkMode ? 'sun' : 'moon']" />

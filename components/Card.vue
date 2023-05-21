@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded shadow w-full p-6 flex flex-row dark:bg-gray-800">
+  <div class="border-b dark:border-gray-700 w-full p-2 flex flex-row">
     <div class="basis-1/12 pt-1">
       <slot name="left"></slot>
     </div>
