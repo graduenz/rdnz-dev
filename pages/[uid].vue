@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <!-- <Title>{{ article?.data.title }} &horbar; Guilherme Raduenz</Title> -->
+    <Title>{{ article?.data.title }} &horbar; Guilherme Raduenz</Title>
   </Head>
   <Article v-if="article" :article="article" />
 </template>
