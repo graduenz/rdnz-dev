@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col space-y-2">
     <div class="text-lg font-bold dark:text-gray-100">
-      <a :href="article.uid">
+      <a :href="`blog/${article.uid}`">
         {{ article.data.title }}
       </a>
     </div>
