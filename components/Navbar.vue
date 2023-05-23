@@ -1,23 +1,22 @@
 <template>
   <div class="relative">
-    <nav class="z-50 top-0 left-0 right-0">
-      <div class="max-w-screen-xl flex flex-wrap items-center mx-auto py-4 md:py-8 px-2">
-        <div class="grow">
-          <a href="/" class="flex items-center">
+    <nav class="z-50 top-0 left-0 right-0 border-b dark:border-gray-800">
+      <div class="max-w-screen-lg flex flex-wrap items-center mx-auto py-4 px-4">
+        <div class="">
+          <a href="/" class="flex items-center rounded bg-mine hover:bg-mine-tonal">
             <div
               id="logo"
               class="flex flex-row self-center"
               >
                 <img
-                src="~/assets/img/gr_icon.png"
+                src="~/assets/img/gr.png"
                 alt="Guilherme Raduenz"
-                class="rounded h-auto w-8 mr-4"
+                class="h-auto w-10"
                 />
-                <span class="pt-0.5 text-xl font-secondary font-bold whitespace-nowrap dark:text-white">
-                  Guilherme Raduenz
-                </span>
               </div>
           </a>
+        </div>
+        <div class="grow">
         </div>
         <div class="inline-flex md:hidden">
           <ThemeToggleButton />
@@ -67,7 +66,7 @@
 
 <script setup lang="ts">
 const menu = [
-  ['Home', '/'],
+  ['Blog', '/'],
   ['About', '/about'],
 ].map(arr => ({
   label: arr[0],

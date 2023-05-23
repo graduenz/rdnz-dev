@@ -1,6 +1,6 @@
 <template>
   <Head>
-    <Title>Guilherme Raduenz</Title>
+    <Title>Blog &horbar; Guilherme Raduenz</Title>
   </Head>
   <ArticleList />
 </template>

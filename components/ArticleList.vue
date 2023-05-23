@@ -1,10 +1,10 @@
 <template>
   <div
-    class="max-w-screen-xl md:w-[650px] flex flex-col space-y-8 mx-auto px-4 pb-0 md:pb-8">
+    class="max-w-screen-lg md:w-[650px] flex flex-col space-y-8 mx-auto px-4 pb-0 md:pb-8">
     <h1
-      class="scroll-m-16 pt-8 text-5xl md:text-6xl font-extrabold whitespace-nowrap dark:text-gray-100"
+      class="scroll-m-16 pt-8 text-5xl font-extrabold whitespace-nowrap dark:text-gray-100"
       >
-      Posts
+      Blog
     </h1>
     <ArticleListItem
       v-for="article in documents"

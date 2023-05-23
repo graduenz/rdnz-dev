@@ -31,6 +31,7 @@
         <a
           v-if="slice.primary.project_url"
           :href="slice.primary.project_url"
+          class="pt-1"
           >
           <LinkIcon class="w-4 h-4" />
         </a>
