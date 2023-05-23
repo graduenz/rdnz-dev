@@ -7,7 +7,7 @@
       :toggling="slice.primary.description && slice.primary.description.length > 0"
       >
       <template #left>
-        <img
+        <NuxtImg
           :src="slice.primary.image.url"
           :alt="slice.primary.name"
           class="rounded"

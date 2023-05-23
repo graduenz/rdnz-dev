@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     "@nuxtjs/prismic",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
+    "@nuxt/image-edge"
   ],
 
   prismic: {
