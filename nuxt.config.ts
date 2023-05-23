@@ -10,13 +10,13 @@ export default defineNuxtConfig({
     endpoint: "rdnz-dev"
   },
 
-  ssr: false,
+  ssr: true,
 
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true
-  //   }
-  // },
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
+  },
 
   css: [
     '~/assets/css/main.css',
