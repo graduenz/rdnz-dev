@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     endpoint: "rdnz-dev"
   },
 
-  ssr: true,
+  ssr: false,
 
   // nitro: {
   //   prerender: {

@@ -31,14 +31,14 @@
         <a
           v-if="slice.primary.project_url"
           :href="slice.primary.project_url"
-            >
-            <font-awesome-icon :icon="['fas', 'link']" />
+          >
+          <LinkIcon class="w-4 h-4" />
         </a>
         <a
           v-if="slice.primary.repository_url"
           :href="slice.primary.repository_url"
-            >
-            <font-awesome-icon :icon="['fab', 'github']" />
+          >
+          <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </template>
     </Card>
@@ -47,6 +47,7 @@
 
 <script setup lang="ts">
 import { Content } from "@prismicio/client";
+import { LinkIcon } from '@heroicons/vue/24/outline';
 
 defineProps(
   getSliceComponentProps<Content.ProjectSlice>([

@@ -14,17 +14,15 @@
           </div>
         </div>
         <div v-if="toggling">
-          <font-awesome-icon
+          <ChevronUpIcon
             v-show="expanded"
-            :icon="['fas', 'chevron-up']"
             @click="collapse"
-            class="h-6 w-6 text-gray-500 cursor-pointer"
+            class="cursor-pointer w-5 h-5 text-gray-500"
             />
-          <font-awesome-icon
+          <ChevronDownIcon
             v-show="!expanded"
-            :icon="['fas', 'chevron-down']"
             @click="expand"
-            class="h-6 w-6 text-gray-500 cursor-pointer"
+            class="cursor-pointer w-5 h-5 text-gray-500"
             />
         </div>
       </div>
@@ -41,20 +39,14 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    toggling: {
-      type: Boolean,
-      required: true,
-    },
-  },
-  setup() {
-    const expanded = ref(false);
-    const expand = () => expanded.value = true;
-    const collapse = () => expanded.value = false;
+<script setup lang="ts">
+import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 
-    return { expanded, expand, collapse }
-  }
-}
+const props = defineProps<{
+  toggling: boolean,
+}>();
+
+const expanded = ref(false);
+const expand = () => expanded.value = true;
+const collapse = () => expanded.value = false;
 </script>
