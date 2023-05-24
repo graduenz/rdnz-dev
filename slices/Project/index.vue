@@ -31,17 +31,12 @@
       </template>
       <template #links>
         <a
-          v-if="slice.primary.project_url"
-          :href="slice.primary.project_url"
-          class="pt-1"
-          >
-          <LinkIcon class="w-4 h-4" />
-        </a>
-        <a
           v-if="slice.primary.repository_url"
           :href="slice.primary.repository_url"
+          class="py-1 px-2 rounded font-medium text-sm text-white dark:text-black bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 transition-all"
           >
           <font-awesome-icon :icon="['fab', 'github']" />
+          <span class="ml-2">See in GitHub</span>
         </a>
       </template>
     </Card>
