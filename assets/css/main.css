@@ -17,6 +17,5 @@ html.dark body {
 }
 
 pre.shiki {
-  @apply p-2 text-[15px] overflow-x-scroll scrollbar-thin
-    scrollbar-thumb-gray-600 scrollbar-track-gray-200;
+  @apply p-2 text-[15px] overflow-x-scroll scrollbar scrollbar-h-2 scrollbar-thumb-rounded scrollbar-thumb-gray-600 scrollbar-track-transparent;
 }

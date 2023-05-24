@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/typography'),
     require('flowbite/plugin'),
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 }
 
