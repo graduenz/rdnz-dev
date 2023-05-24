@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b dark:border-gray-700 w-full p-2 flex flex-row">
+  <div class="w-full p-2 flex flex-row">
     <div class="pt-1 flex-shrink-0 w-16">
       <slot name="left"></slot>
     </div>
@@ -32,7 +32,7 @@
         >
         <slot name="content"></slot>
       </div>
-      <div class="mt-4 flex flex-row space-x-4 text-gray-500">
+      <div class="mt-4 flex flex-row space-x-4">
         <slot name="links"></slot>
       </div>
     </div>
