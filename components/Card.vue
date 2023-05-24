@@ -1,9 +1,9 @@
 <template>
   <div class="border-b dark:border-gray-700 w-full p-2 flex flex-row">
-    <div class="basis-1/12 pt-1">
+    <div class="pt-1 flex-shrink-0 w-16">
       <slot name="left"></slot>
     </div>
-    <div class="basis-11/12 pl-4 flex flex-col">
+    <div class="pl-4 flex flex-col grow">
       <div class="flex flex-row">
         <div class="grow">
           <div class="text-lg font-medium dark:text-gray-100">

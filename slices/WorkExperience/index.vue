@@ -10,6 +10,8 @@
         <NuxtImg
           :src="slice.primary.image.url"
           :alt="slice.primary.company"
+          width="64"
+          height="64"
           class="rounded"
           />
       </template>
