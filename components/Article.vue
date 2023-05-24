@@ -1,7 +1,7 @@
 <template>
   <div
     class="max-w-screen-lg md:w-[750px] mx-auto mt-8 px-4 pb-0 md:pb-8">
-    <div class="flex flex-col space-y-8">
+    <div class="flex flex-col space-y-12">
       <div class="text-5xl md:text-6xl font-extrabold dark:text-gray-100">
         {{ article.data.title }}
       </div>
@@ -33,9 +33,9 @@
           :components="components"
           />
       </div>
-    </div>
-    <div class="mt-12">
-      <ArticleComments />
+      <div>
+        <ArticleComments />
+      </div>
     </div>
   </div>
 </template>
