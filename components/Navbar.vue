@@ -39,7 +39,7 @@
               >
               <a
                 :href="item.href"
-                class="cursor-pointer block font-semibold px-4 py-2 text-gray-500 rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all"
+                :class="[item.isActive ? 'text-black dark:text-white' : 'text-gray-500', 'cursor-pointer block px-4 py-2 font-semibold rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all']"
                 >
                 {{ item.label }}
               </a>
@@ -65,11 +65,14 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute();
+
 const menu = [
   ['Blog', '/'],
   ['About', '/about'],
 ].map(arr => ({
   label: arr[0],
   href: arr[1],
+  isActive: route.path === arr[1]
 }));
 </script>
