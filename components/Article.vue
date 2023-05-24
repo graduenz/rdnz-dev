@@ -24,7 +24,7 @@
         </span>
       </div>
     </div>
-      <div class="flex flex-col space-y-4">
+      <div class="flex flex-col space-y-12">
         <SliceZone
           :slices="article.data.slices"
           :components="components"

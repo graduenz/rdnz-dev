@@ -3,14 +3,26 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    Placeholder component for image (variation: {{ slice.variation }}) Slices
+    <div class="flex flex-col items-center space-y-1">
+      <div>
+        <NuxtImg
+          :src="slice.primary.image.url"
+          :alt="slice.primary.image.alt"
+          :width="slice.primary.image.dimensions?.width"
+          :height="slice.primary.image.dimensions?.height"
+          class="rounded"
+        />
+      </div>
+      <div class="text-gray-500 italic">
+        {{ slice.primary.caption }}
+      </div>
+  </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { Content } from "@prismicio/client";
 
-// The array passed to `getSliceComponentProps` is purely optional.
 // Consider it as a visual hint for you when templating your slice.
 defineProps(
   getSliceComponentProps<Content.ImageSlice>([

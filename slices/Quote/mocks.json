@@ -4,15 +4,9 @@
 		"variation": "default",
 		"primary": {
 			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Reprehenderit est Lorem ad minim veniam ea nulla consectetur enim consectetur amet ex minim ut."
-						}
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "grown",
+				"type": "Text"
 			},
 			"source": {
 				"__TYPE__": "FieldContent",

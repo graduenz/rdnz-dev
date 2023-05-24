@@ -10,7 +10,6 @@
     "slicemachine": "start-slicemachine"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.5.3",
     "@nuxt/image-edge": "1.0.0-28059208.2abef1b",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/prismic": "3.0.0-rc.5",
@@ -31,6 +30,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@heroicons/vue": "^2.0.18",
     "@prismicio/helpers": "^2.3.9",
-    "flowbite": "^1.6.5"
+    "flowbite": "^1.6.5",
+    "shiki-es": "^0.2.0"
   }
 }

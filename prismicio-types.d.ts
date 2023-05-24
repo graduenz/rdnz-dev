@@ -551,16 +551,6 @@ export type ProjectSlice = prismicT.SharedSlice<
  */
 interface QuoteSliceDefaultPrimary {
   /**
-   * Text field in *Quote → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: quote.primary.text
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  text: prismicT.RichTextField;
-  /**
    * Source field in *Quote → Primary*
    *
    * - **Field Type**: Text
@@ -570,6 +560,16 @@ interface QuoteSliceDefaultPrimary {
    *
    */
   source: prismicT.KeyTextField;
+  /**
+   * Text field in *Quote → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
 }
 /**
  * Default variation for Quote Slice

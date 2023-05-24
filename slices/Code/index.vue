@@ -3,16 +3,15 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    Placeholder component for code (variation: {{ slice.variation }}) Slices
+    <div v-html="codeHtml"></div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { Content } from "@prismicio/client";
+import { getHighlighter } from "shiki-es";
 
-// The array passed to `getSliceComponentProps` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
-defineProps(
+const props = defineProps(
   getSliceComponentProps<Content.CodeSlice>([
     "slice",
     "index",
@@ -20,4 +19,16 @@ defineProps(
     "context",
   ])
 );
+
+const codeHtml = ref('');
+const code = (props.slice.primary.code[0] as any).text;
+
+onMounted(async () =>{
+  const hl = await getHighlighter({
+    theme: 'github-dark-dimmed',
+  });
+  codeHtml.value = hl.codeToHtml(code, {
+    lang: props.slice.primary.language!,
+  });
+});
 </script>
