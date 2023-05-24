@@ -20,9 +20,23 @@ import { MoonIcon } from "@heroicons/vue/24/solid";
 
 const colorMode = useColorMode();
 const isDarkMode = computed(() => colorMode.preference === 'dark');
+
 const toggleTheme = () => {
   colorMode.preference = colorMode.preference === 'dark'
     ? 'light'
     : 'dark';
+
+    applyThemeChanges(colorMode.preference === 'dark');
+};
+
+const applyThemeChanges = (dark: boolean) => {
+  // Sets giscus iframe to either black or white theme
+  const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+  if (!iframe || !iframe.contentWindow) return;
+  iframe.contentWindow.postMessage({ giscus: {
+    setConfig: {
+      theme: dark ? 'transparent_dark' : 'light'
+    }
+  } }, 'https://giscus.app');
 };
 </script>
