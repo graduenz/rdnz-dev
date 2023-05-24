@@ -3,7 +3,10 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <div v-html="codeHtml"></div>
+    <div
+      class="codeslice"
+      v-html="codeHtml">
+    </div>
   </section>
 </template>
 

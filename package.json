@@ -23,6 +23,7 @@
     "sass": "^1.62.1",
     "sass-loader": "10",
     "slice-machine-ui": "^1.0.3",
+    "tailwind-scrollbar": "^3.0.4",
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
