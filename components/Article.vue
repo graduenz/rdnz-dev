@@ -2,9 +2,6 @@
   <div
     class="max-w-screen-lg md:w-[750px] mx-auto mt-8 px-4 pb-0 md:pb-8">
     <div class="flex flex-col space-y-12">
-      <div class="text-5xl md:text-6xl font-extrabold dark:text-gray-100">
-        {{ article.data.title }}
-      </div>
       <div class="flex flex-row text-gray-500 space-x-2 font-mono font-medium text-[15px]">
         <div class="flex flex-row space-x-2">
           <CalendarIcon class="w-5 h-5" />
@@ -26,6 +23,15 @@
             </template>
           </span>
         </div>
+      </div>
+      <div class="text-5xl md:text-6xl font-extrabold dark:text-gray-100">
+        {{ article.data.title }}
+      </div>
+      <div>
+        <PrismicRichText
+          :field="article.data.subtitle"
+          class="prose prose-xl dark:prose-invert text-gray-500"
+        />
       </div>
       <div class="flex flex-col space-y-12">
         <SliceZone
