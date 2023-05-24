@@ -13,6 +13,12 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+    },
+  },
+
   css: [
     "~/assets/css/main.css",
     "@fortawesome/fontawesome-svg-core/styles.css",
