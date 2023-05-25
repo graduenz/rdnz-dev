@@ -1,35 +1,30 @@
 <template>
   <div
-    class="max-w-screen-lg md:w-[750px] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
+    class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
     <div class="flex flex-col space-y-12">
-      <div class="flex flex-row space-x-2 font-mono font-medium text-[15px] text-gray-500 mx-auto">
-        <CalendarIcon class="w-5 h-5" />
+      <div class="flex flex-col items-center space-y-1">
+        <div>
+          <NuxtImg
+            :src="article.data.featured_image.url"
+            :alt="article.data.featured_image.alt"
+            :width="article.data.featured_image.dimensions?.width"
+            :height="article.data.featured_image.dimensions?.height"
+            class="rounded"
+          />
+        </div>
+      </div>
+      <div class="flex flex-row space-x-2 font-mono font-medium text-gray-500 mx-auto">
         <span>
           {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) }}
+          &horbar;
+          {{ article.data.category }}
         </span>
       </div>
       <div class="text-5xl font-extrabold dark:text-gray-100 text-center">
         {{ article.data.title }}
       </div>
-      <div
-        v-if="article.tags && article.tags.length > 0"
-        class="flex flex-row space-x-2 font-mono font-medium text-[15px] text-gray-500 mx-auto"
-        >
-        <TagIcon class="w-5 h-5" />
-        <span class="ml-2">
-          <template
-            v-for="(tag, index) in article.tags"
-            :key="tag">
-            {{ index === 0 ? '' : ', ' }}
-            {{ tag }}
-          </template>
-        </span>
-      </div>
-      <div>
-        <PrismicRichText
-          :field="article.data.subtitle"
-          class="prose prose-lg dark:prose-invert text-gray-500 text-center"
-        />
+      <div class="prose prose-lg dark:prose-invert text-gray-500 text-center">
+        {{ article.data.subtitle }}
       </div>
       <div class="flex flex-col space-y-12">
         <SliceZone
@@ -48,7 +43,6 @@
 import { components } from '~/slices';
 import { ArticleDocument } from '~/prismicio-types';
 import { asDate } from '@prismicio/helpers';
-import { CalendarIcon, TagIcon } from '@heroicons/vue/24/outline';
 
 defineProps<{
   article: ArticleDocument,

@@ -5,19 +5,26 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": { "type": "UID", "config": { "label": "Uid", "placeholder": "" } },
       "title": {
         "type": "Text",
         "config": { "label": "Title", "placeholder": "" }
       },
-      "subtitle": {
-        "type": "StructuredText",
+      "uid": { "type": "UID", "config": { "label": "Uid", "placeholder": "" } },
+      "featured_image": {
+        "type": "Image",
         "config": {
-          "label": "Subtitle",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph"
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
         }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": { "label": "Subtitle", "placeholder": "" }
+      },
+      "category": {
+        "type": "Text",
+        "config": { "label": "Category", "placeholder": "" }
       },
       "publish_date": {
         "type": "Date",

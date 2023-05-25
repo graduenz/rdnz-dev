@@ -13,10 +13,10 @@
           class="rounded"
         />
       </div>
-      <div class="text-gray-500 italic">
+      <div class="prose prose-sm dark:prose-invert italic">
         {{ slice.primary.caption }}
       </div>
-  </div>
+    </div>
   </section>
 </template>
 

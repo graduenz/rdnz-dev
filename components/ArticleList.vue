@@ -1,16 +1,18 @@
 <template>
   <div
-    class="max-w-screen-lg md:w-[750px] flex flex-col space-y-8 mx-auto px-4 pb-0 md:pb-8">
+    class="max-w-screen-lg flex flex-col space-y-8 mx-auto px-4 pb-0 md:pb-8">
     <h1
       class="scroll-m-16 pt-8 text-5xl font-extrabold whitespace-nowrap dark:text-gray-100"
       >
       Blog
     </h1>
-    <ArticleListItem
-      v-for="article in documents"
-      :key="article.uid"
-      :article="article"
-      />
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <ArticleListItem
+        v-for="article in documents"
+        :key="article.uid"
+        :article="article"
+        />
+    </div>
   </div>
 </template>
 

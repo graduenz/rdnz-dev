@@ -20,16 +20,38 @@ interface ArticleDocumentData {
    */
   title: prismicT.KeyTextField;
   /**
+   * Featured Image field in *Article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  featured_image: prismicT.ImageField<never>;
+  /**
    * Subtitle field in *Article*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: article.subtitle
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  subtitle: prismicT.RichTextField;
+  subtitle: prismicT.KeyTextField;
+  /**
+   * Category field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  category: prismicT.KeyTextField;
   /**
    * Publish Date field in *Article*
    *

@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-lg md:w-[750px] mx-auto px-4 pb-0 md:pb-8">
+  <div class="max-w-screen-lg md:w-[40rem] mx-auto px-4 pb-0 md:pb-8">
     <h1
       :id="name"
       class="scroll-m-16 pb-8 pt-8 text-5xl font-extrabold whitespace-nowrap dark:text-gray-100"
