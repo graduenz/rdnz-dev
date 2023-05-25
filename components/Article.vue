@@ -1,36 +1,34 @@
 <template>
   <div
-    class="max-w-screen-lg md:w-[750px] mx-auto mt-8 px-4 pb-0 md:pb-8">
+    class="max-w-screen-lg md:w-[750px] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
     <div class="flex flex-col space-y-12">
-      <div class="flex flex-row text-gray-500 space-x-2 font-mono font-medium text-[15px]">
-        <div class="flex flex-row space-x-2">
-          <CalendarIcon class="w-5 h-5" />
-          <span>
-            {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }) }}
-          </span>
-        </div>
-        <div>
-          &bull;
-        </div>
-        <div class="flex flex-row space-x-2">
-          <TagIcon class="w-5 h-5" />
-          <span class="ml-2">
-            <template
-              v-for="(tag, index) in article.tags"
-              :key="tag">
-              {{ index === 0 ? '' : ', ' }}
-              {{ tag }}
-            </template>
-          </span>
-        </div>
+      <div class="flex flex-row space-x-2 font-mono font-medium text-[15px] text-gray-500 mx-auto">
+        <CalendarIcon class="w-5 h-5" />
+        <span>
+          {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) }}
+        </span>
       </div>
-      <div class="text-5xl md:text-6xl font-extrabold dark:text-gray-100">
+      <div class="text-5xl font-extrabold dark:text-gray-100 text-center">
         {{ article.data.title }}
+      </div>
+      <div
+        v-if="article.tags && article.tags.length > 0"
+        class="flex flex-row space-x-2 font-mono font-medium text-[15px] text-gray-500 mx-auto"
+        >
+        <TagIcon class="w-5 h-5" />
+        <span class="ml-2">
+          <template
+            v-for="(tag, index) in article.tags"
+            :key="tag">
+            {{ index === 0 ? '' : ', ' }}
+            {{ tag }}
+          </template>
+        </span>
       </div>
       <div>
         <PrismicRichText
           :field="article.data.subtitle"
-          class="prose prose-xl dark:prose-invert text-gray-500"
+          class="prose prose-lg dark:prose-invert text-gray-500 text-center"
         />
       </div>
       <div class="flex flex-col space-y-12">
