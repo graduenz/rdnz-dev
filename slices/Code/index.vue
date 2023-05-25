@@ -4,8 +4,10 @@
     :data-slice-variation="slice.variation"
   >
     <div
-      class="codeslice"
-      v-html="codeHtml">
+      :id="slice.id"
+      class="flex flex-row flex-nowrap space-x-4 p-4 rounded-lg bg-[#22272e]"
+      >
+      <pre class="line-numbers flex flex-col text-gray-600 text-[15px] text-right"></pre>
     </div>
   </section>
 </template>
@@ -23,15 +25,33 @@ const props = defineProps(
   ])
 );
 
-const codeHtml = ref('');
 const code = (props.slice.primary.code[0] as any).text;
 
 onMounted(async () =>{
+  const sliceDiv = document.getElementById(props.slice.id!);
+  
+  if (!sliceDiv) return false;
+
   const hl = await getHighlighter({
     theme: 'github-dark-dimmed',
   });
-  codeHtml.value = hl.codeToHtml(code, {
+  
+  const codeHtmlDiv = document.createElement('div');
+  codeHtmlDiv.className = 'grow overflow-hidden';
+
+  codeHtmlDiv.innerHTML = hl.codeToHtml(code, {
     lang: props.slice.primary.language!,
   });
+  sliceDiv.appendChild(codeHtmlDiv);
+
+  const lineNumbersDiv = sliceDiv?.querySelector('.line-numbers');
+  if (lineNumbersDiv) {
+    const lines = codeHtmlDiv.querySelectorAll('span.line');
+    for (let ln = 0; ln < lines.length; ++ln) {
+      const lnElement = document.createElement('span');
+      lnElement.innerText = (ln + 1).toString();
+      lineNumbersDiv.appendChild(lnElement);
+    }
+  }
 });
 </script>

@@ -12,10 +12,6 @@ html.dark body {
   background-color: #030712;
 }
 
-.codeslice {
-  @apply p-4 rounded-lg bg-[#22272e];
-}
-
 pre.shiki {
-  @apply p-2 text-[15px] overflow-x-scroll scrollbar scrollbar-h-2 scrollbar-thumb-rounded scrollbar-thumb-gray-600 scrollbar-track-transparent;
+  @apply pb-2 text-[15px] overflow-x-scroll scrollbar scrollbar-h-2 scrollbar-thumb-rounded scrollbar-thumb-gray-600 scrollbar-track-transparent;
 }
