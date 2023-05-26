@@ -1,11 +1,11 @@
 <template>
   <div class="p-6 flex flex-col space-y-2 rounded-lg bg-gradient-to-b from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900">
-    <div class="shrink-0 aspect-square">
+    <div class="aspect-square flex items-center">
       <a :href="`blog/${article.uid}`">
         <NuxtImg
           :src="article.data.featured_image.url"
           :alt="article.data.featured_image.alt"
-          class="rounded-lg"
+          class="w-4/5 hover:w-5/6 mx-auto rounded-lg transition-all"
           />
       </a>
     </div>
