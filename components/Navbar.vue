@@ -8,7 +8,7 @@
               id="logo"
               class="flex flex-row self-center"
               >
-                <NuxtImg
+              <img
                 src="/gr.png"
                 alt="Guilherme Raduenz"
                 class="h-auto w-10"
