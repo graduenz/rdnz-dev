@@ -20,8 +20,8 @@ module.exports = {
         'mono': ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        'mine': '#304ffe',
-        'mine-tonal': '#4d68fe',
+        'mine': '#333a47',
+        'mine-tonal': '#474e59',
       }
     }
   },
