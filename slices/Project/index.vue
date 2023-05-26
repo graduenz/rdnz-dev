@@ -33,7 +33,7 @@
         <a
           v-if="slice.primary.repository_url"
           :href="slice.primary.repository_url"
-          class="py-1 px-2 rounded font-medium text-sm text-white dark:text-black bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 transition-all"
+          class="py-2 px-3 rounded-3xl font-medium text-sm text-white dark:text-black bg-black dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-200 transition-all"
           >
           <font-awesome-icon :icon="['fab', 'github']" />
           <span class="ml-2">See in GitHub</span>

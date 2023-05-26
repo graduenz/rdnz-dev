@@ -11,7 +11,7 @@
               <img
                 src="/gr.png"
                 alt="Guilherme Raduenz"
-                class="h-auto w-10"
+                class="h-auto w-12"
                 />
               </div>
           </a>
@@ -52,7 +52,7 @@
               >
               <a
                 href="https://tally.so/r/woDbrx"
-                class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded text-sm px-5 py-3 mx-3 md:mx-0 transition-all"
+                class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded-3xl text-sm px-5 py-3 mx-3 md:mx-0 transition-all"
                 >
                 Contact
               </a>
