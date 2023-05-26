@@ -7,6 +7,21 @@ export default defineNuxtConfig({
     "@nuxt/image-edge"
   ],
 
+  app: {
+    head: {
+      meta: [
+        { name: "language", content: "en" },
+        { name: "robots", content: "index,follow" },
+        { name: "author", content: "Guilherme Raduenz" },
+      ],
+      link: [
+        { rel: "icon", href: "/favicon.ico" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        { rel: "manifest", href: "/site.webmanifest" },
+      ]
+    },
+  },
+
   prismic: {
     endpoint: "rdnz-dev"
   },

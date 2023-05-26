@@ -1,7 +1,4 @@
 <template>
-  <Head>
-    <Title>{{ article?.data.title }} &horbar; Guilherme Raduenz</Title>
-  </Head>
   <Article v-if="article" :article="article" />
 </template>
 
@@ -20,4 +17,26 @@ const { data: article } = await useAsyncData(async () => {
     throw createError({ statusCode: 404, message: "Page not found" });
   }
 });
+
+const meta = {
+  title: () => `${article.value?.data.title} ― Guilherme Raduenz`,
+  description: () => article.value?.data.subtitle,
+  image: () => article.value?.data.featured_image?.url,
+  twitter: '@graduenz',
+};
+
+useSeoMeta({
+  title: meta.title,
+  description: meta.description,
+  twitterTitle: meta.title,
+  twitterDescription: meta.description,
+  twitterImage: meta.image,
+  twitterCard: 'summary_large_image',
+  twitterSite: meta.twitter,
+  twitterCreator: meta.twitter,
+  ogTitle: meta.title,
+  ogDescription: meta.description,
+  ogImage: meta.image,
+  ogType: 'article',
+})
 </script>
