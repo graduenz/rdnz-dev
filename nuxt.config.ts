@@ -23,7 +23,8 @@ export default defineNuxtConfig({
   },
 
   prismic: {
-    endpoint: "rdnz-dev"
+    endpoint: "rdnz-dev",
+    linkResolver: "~/prismic/link-resolver.js",
   },
 
   ssr: true,
