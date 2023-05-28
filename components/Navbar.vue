@@ -1,23 +1,22 @@
 <template>
   <div class="relative">
-    <nav class="fixed z-50 top-0 left-0 right-0 bg-white dark:bg-gray-900">
-      <div class="max-w-screen-xl flex flex-wrap items-center mx-auto px-4 py-8">
-        <div class="grow">
-          <a href="/" class="grow flex items-center">
+    <nav class="z-50 top-0 left-0 right-0 border-b dark:border-gray-800">
+      <div class="max-w-screen-lg flex flex-wrap items-center mx-auto py-4 px-4">
+        <div class="">
+          <a href="/" class="flex items-center rounded bg-mine hover:bg-mine-tonal">
             <div
               id="logo"
               class="flex flex-row self-center"
               >
-                <img
-                src="~/assets/img/gr_icon.png"
+              <img
+                src="/gr.png"
                 alt="Guilherme Raduenz"
-                class="rounded h-auto w-8 mr-4"
+                class="h-auto w-12"
                 />
-                <span class="text-xl font-bold whitespace-nowrap dark:text-white">
-                  Guilherme Raduenz
-                </span>
               </div>
           </a>
+        </div>
+        <div class="grow">
         </div>
         <div class="inline-flex md:hidden">
           <ThemeToggleButton />
@@ -33,14 +32,14 @@
           <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 dark:border-gray-700 rounded-lg md:flex-row md:space-x-6 md:mt-0 md:border-0">
+          <ul class="font flex flex-col p-4 md:p-0 mt-4 border border-gray-100 dark:border-gray-700 rounded-lg md:flex-row md:space-x-6 md:mt-0 md:border-0">
             <li
               v-for="item in menu"
               :key="item.label"
               >
               <a
-                @click="scrollInto(item.targetElementSelector)"
-                class="cursor-pointer block font-medium px-4 py-2 text-gray-600 dark:text-gray-300 rounded md:border-0 hover:text-black dark:hover:text-white md:p-0"
+                :href="item.href"
+                :class="[item.isActive ? 'text-black dark:text-white' : 'text-gray-500', 'cursor-pointer block px-4 py-2 font-semibold rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all']"
                 >
                 {{ item.label }}
               </a>
@@ -53,7 +52,7 @@
               >
               <a
                 href="https://tally.so/r/woDbrx"
-                class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded text-sm px-5 py-3 mx-3 md:mx-0"
+                class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded-3xl text-sm px-5 py-3 mx-3 md:mx-0 transition-all"
                 >
                 Contact
               </a>
@@ -66,27 +65,14 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute();
+
 const menu = [
-  ['Home', ''],
-  ['About', '#About'],
-  ['Experience', '#Experience'],
-  ['Projects', '#Projects'],
-  ['Education', '#Education'],
+  ['Blog', '/'],
+  ['About', '/about'],
 ].map(arr => ({
   label: arr[0],
-  targetElementSelector: arr[1],
+  href: arr[1],
+  isActive: route.path === arr[1]
 }));
-
-const scrollInto = (targetElementSelector: string) => {
-  if (targetElementSelector) {
-    const el = document.querySelector(targetElementSelector);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  }
-  else {
-    window.scroll({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
-};
 </script>

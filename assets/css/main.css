@@ -1,13 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=League+Spartan:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-color: #f3f7fa;
+  background-color: #fff;
 }
 
 html.dark body {
-  background-color: #111827;
+  background-color: #030712;
+}
+
+pre.shiki {
+  @apply pb-2 text-[15px] overflow-x-scroll scrollbar scrollbar-h-2 scrollbar-thumb-rounded scrollbar-thumb-gray-600 scrollbar-track-transparent;
+  counter-reset: line;
+}
+
+pre.shiki .line {
+  counter-increment: line;
+}
+
+pre.shiki .line:before {
+  @apply select-none inline-block pr-4 text-gray-600 text-[15px] text-right;
+  width: 2rem;
+  content: counter(line);
 }

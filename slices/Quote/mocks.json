@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"text": {
+				"__TYPE__": "FieldContent",
+				"value": "grown",
+				"type": "Text"
+			},
+			"source": {
+				"__TYPE__": "FieldContent",
+				"value": "teeth",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

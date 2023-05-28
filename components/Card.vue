@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-white rounded shadow w-full p-6 flex flex-row dark:bg-gray-800">
-    <div class="basis-1/12 pt-1">
+  <div class="w-full p-2 flex flex-row">
+    <div class="pt-1 flex-shrink-0 w-16">
       <slot name="left"></slot>
     </div>
-    <div class="basis-11/12 pl-4 flex flex-col">
+    <div class="pl-4 flex flex-col grow">
       <div class="flex flex-row">
         <div class="grow">
           <div class="text-lg font-medium dark:text-gray-100">
@@ -14,17 +14,15 @@
           </div>
         </div>
         <div v-if="toggling">
-          <font-awesome-icon
+          <ChevronUpIcon
             v-show="expanded"
-            :icon="['fas', 'chevron-up']"
             @click="collapse"
-            class="h-6 w-6 text-gray-500 cursor-pointer"
+            class="cursor-pointer w-5 h-5 text-gray-500"
             />
-          <font-awesome-icon
+          <ChevronDownIcon
             v-show="!expanded"
-            :icon="['fas', 'chevron-down']"
             @click="expand"
-            class="h-6 w-6 text-gray-500 cursor-pointer"
+            class="cursor-pointer w-5 h-5 text-gray-500"
             />
         </div>
       </div>
@@ -34,27 +32,21 @@
         >
         <slot name="content"></slot>
       </div>
-      <div class="mt-4 flex flex-row space-x-4 text-gray-500">
+      <div class="mt-4 flex flex-row space-x-4">
         <slot name="links"></slot>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    toggling: {
-      type: Boolean,
-      required: true,
-    },
-  },
-  setup() {
-    const expanded = ref(false);
-    const expand = () => expanded.value = true;
-    const collapse = () => expanded.value = false;
+<script setup lang="ts">
+import { ChevronUpIcon, ChevronDownIcon } from '@heroicons/vue/24/outline';
 
-    return { expanded, expand, collapse }
-  }
-}
+const props = defineProps<{
+  toggling: boolean,
+}>();
+
+const expanded = ref(false);
+const expand = () => expanded.value = true;
+const collapse = () => expanded.value = false;
 </script>

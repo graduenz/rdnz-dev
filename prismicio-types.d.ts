@@ -6,6 +6,99 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Article documents */
+interface ArticleDocumentData {
+  /**
+   * Title field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  title: prismicT.KeyTextField;
+  /**
+   * Featured Image field in *Article*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  featured_image: prismicT.ImageField<never>;
+  /**
+   * Subtitle field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.subtitle
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  subtitle: prismicT.KeyTextField;
+  /**
+   * Category field in *Article*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  category: prismicT.KeyTextField;
+  /**
+   * Publish Date field in *Article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.publish_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/date
+   *
+   */
+  publish_date: prismicT.DateField;
+  /**
+   * Slice Zone field in *Article*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<ArticleDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Article → Slice Zone*
+ *
+ */
+type ArticleDocumentDataSlicesSlice =
+  | TextSlice
+  | QuoteSlice
+  | ImageSlice
+  | CodeSlice;
+/**
+ * Article document from Prismic
+ *
+ * - **API ID**: `article`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithUID<
+    Simplify<ArticleDocumentData>,
+    "article",
+    Lang
+  >;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
   /**
@@ -172,9 +265,63 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 export type AllDocumentTypes =
+  | ArticleDocument
   | HomepageDocument
   | SectionDocument
   | SettingsDocument;
+/**
+ * Primary content in Code → Primary
+ *
+ */
+interface CodeSliceDefaultPrimary {
+  /**
+   * Code field in *Code → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: code.primary.code
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  code: prismicT.RichTextField;
+  /**
+   * Language field in *Code → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: code.primary.language
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  language: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Code Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CodeSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<CodeSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Code*
+ *
+ */
+type CodeSliceVariation = CodeSliceDefault;
+/**
+ * Code Shared Slice
+ *
+ * - **API ID**: `code`
+ * - **Description**: `Code`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CodeSlice = prismicT.SharedSlice<"code", CodeSliceVariation>;
 /**
  * Primary content in Education → Primary
  *
@@ -272,6 +419,59 @@ export type EducationSlice = prismicT.SharedSlice<
   EducationSliceVariation
 >;
 /**
+ * Primary content in Image → Primary
+ *
+ */
+interface ImageSliceDefaultPrimary {
+  /**
+   * Image field in *Image → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.primary.image
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  image: prismicT.ImageField<never>;
+  /**
+   * Caption field in *Image → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image.primary.caption
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  caption: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSliceDefault = prismicT.SharedSliceVariation<
+  "default",
+  Simplify<ImageSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Image*
+ *
+ */
+type ImageSliceVariation = ImageSliceDefault;
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: `Image`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
+/**
  * Primary content in Project → Primary
  *
  */
@@ -368,27 +568,58 @@ export type ProjectSlice = prismicT.SharedSlice<
   ProjectSliceVariation
 >;
 /**
+ * Primary content in Quote → Primary
  *
  */
+interface QuoteSliceDefaultPrimary {
   /**
+   * Source field in *Quote → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   * - **API ID Path**: quote.primary.source
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  text: prismicT.RichTextField;
+  source: prismicT.KeyTextField;
+  /**
+   * Text field in *Quote → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote.primary.text
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
 }
 /**
+ * Default variation for Quote Slice
  *
  * - **API ID**: `default`
  * - **Description**: `Default`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
+export type QuoteSliceDefault = prismicT.SharedSliceVariation<
   "default",
+  Simplify<QuoteSliceDefaultPrimary>,
   never
 >;
+/**
+ * Slice variation for *Quote*
+ *
+ */
+type QuoteSliceVariation = QuoteSliceDefault;
+/**
+ * Quote Shared Slice
+ *
+ * - **API ID**: `quote`
+ * - **Description**: `Quote`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
 /**
  * Primary content in Text → Primary
  *
@@ -547,6 +778,9 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
+      ArticleDocumentData,
+      ArticleDocumentDataSlicesSlice,
+      ArticleDocument,
       HomepageDocumentData,
       HomepageDocument,
       SectionDocumentData,
@@ -556,14 +790,26 @@ declare module "@prismicio/client" {
       SettingsDocumentDataSocialItem,
       SettingsDocument,
       AllDocumentTypes,
+      CodeSliceDefaultPrimary,
+      CodeSliceDefault,
+      CodeSliceVariation,
+      CodeSlice,
       EducationSliceDefaultPrimary,
       EducationSliceDefault,
       EducationSliceVariation,
       EducationSlice,
+      ImageSliceDefaultPrimary,
+      ImageSliceDefault,
+      ImageSliceVariation,
+      ImageSlice,
       ProjectSliceDefaultPrimary,
       ProjectSliceDefault,
       ProjectSliceVariation,
       ProjectSlice,
+      QuoteSliceDefaultPrimary,
+      QuoteSliceDefault,
+      QuoteSliceVariation,
+      QuoteSlice,
       TextSliceDefaultPrimary,
       TextSliceDefault,
       TextSliceVariation,

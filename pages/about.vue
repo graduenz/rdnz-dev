@@ -1,11 +1,14 @@
 <template>
-  <ArticleList />
+  <Section name="About" />
+  <Section name="Experience" />
+  <Section name="Projects" />
+  <Section name="Education" />
 </template>
 
 <script setup lang="ts">
 const meta = {
-  title: 'Blog ― Guilherme Raduenz',
-  description: 'Guilherme Raduenz\'s personal blog',
+  title: 'About ― Guilherme Raduenz',
+  description: 'Guilherme Raduenz\'s about page',
   image: 'https://rdnz.dev/gr-og.png',
   twitter: '@graduenz',
 };

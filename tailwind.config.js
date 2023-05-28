@@ -17,17 +17,18 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Inter', ...defaultTheme.fontFamily.sans],
-        'ls': ['"League Spartan"', ...defaultTheme.fontFamily.sans],
+        'mono': ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        'mine': '#304ffe',
-        'mine-tonal': '#4d68fe',
+        'mine': '#333a47',
+        'mine-tonal': '#474e59',
       }
     }
   },
   plugins: [
-    require('flowbite/plugin'),
     require('@tailwindcss/typography'),
+    require('flowbite/plugin'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 }
 

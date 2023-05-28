@@ -1,0 +1,27 @@
+{
+  "id": "quote",
+  "type": "SharedSlice",
+  "name": "Quote",
+  "description": "Quote",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "source": {
+          "type": "Text",
+          "config": { "label": "Source", "placeholder": "" }
+        },
+        "text": {
+          "type": "Text",
+          "config": { "label": "Text", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

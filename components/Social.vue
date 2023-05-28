@@ -1,9 +1,11 @@
 <template>
-  <div class="flex flex-row space-x-4 items-center justify-center mx-auto text-2xl text-gray-900 dark:text-gray-100">
+  <div class="flex flex-row space-x-4 items-center justify-center mx-auto text-xl text-gray-500">
     <a
       v-for="s in document?.data.social"
-      :href="s.url"
-      :title="s.name"
+      :key="s.name!"
+      :href="s.url!"
+      :title="s.name!"
+      class="hover:text-black dark:hover:text-white transition-all"
     >
     <font-awesome-icon :icon="['fab', s.icon]" />
     </a>

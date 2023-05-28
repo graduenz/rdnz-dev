@@ -1,13 +1,14 @@
 <template>
-  <div class="max-w-screen-xl md:w-[650px] mx-auto px-4 pb-0 md:pb-8">
+  <div class="max-w-screen-lg md:w-[40rem] mx-auto px-4 pb-0 md:pb-8">
     <h1
       :id="name"
-      class="scroll-m-16 pb-8 pt-16 text-5xl md:text-6xl font-ls font-bold text-center whitespace-nowrap dark:text-gray-100"
+      class="scroll-m-16 py-8 text-5xl font-bold whitespace-nowrap dark:text-gray-100"
       >
       {{ name }}
     </h1>
     <div class="flex flex-col space-y-4">
       <SliceZone
+        v-if="document?.data.slices"
         :slices="document?.data.slices"
         :components="components"
         />
