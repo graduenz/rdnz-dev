@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { Content } from "@prismicio/client";
-import { getHighlighter } from "shiki-es";
+import { getHighlighter } from "shiki";
 
 const props = defineProps(
   getSliceComponentProps<Content.CodeSlice>([

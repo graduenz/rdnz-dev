@@ -32,6 +32,6 @@
     "@heroicons/vue": "^2.0.18",
     "@prismicio/helpers": "^2.3.9",
     "flowbite": "^1.6.5",
-    "shiki-es": "^0.2.0"
+    "shiki": "^0.14.2"
   }
 }
