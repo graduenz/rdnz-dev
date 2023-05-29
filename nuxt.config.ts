@@ -9,6 +9,15 @@ export default defineNuxtConfig({
 
   app: {
     head: {
+      script: [
+        {
+          async: true,
+          src: "https://www.googletagmanager.com/gtag/js?id=G-5KTNBB50LM",
+        },
+        {
+          src: "/gtag.js",
+        }
+      ],
       meta: [
         { name: "language", content: "en" },
         { name: "robots", content: "index,follow" },
