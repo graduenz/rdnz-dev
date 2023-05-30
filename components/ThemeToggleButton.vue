@@ -21,6 +21,11 @@ import { MoonIcon } from "@heroicons/vue/24/solid";
 const colorMode = useColorMode();
 const isDarkMode = computed(() => colorMode.preference === 'dark');
 
+onMounted(() => {
+  if (colorMode.preference == 'system')
+    colorMode.preference = 'light';
+});
+
 const toggleTheme = () => {
   colorMode.preference = colorMode.preference === 'dark'
     ? 'light'
