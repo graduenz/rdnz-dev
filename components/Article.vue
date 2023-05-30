@@ -15,7 +15,7 @@
       </div>
       <div class="flex flex-row space-x-2 font-mono font-medium text-gray-500 mx-auto">
         <span>
-          {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) }}
+          {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
           &horbar;
           {{ article.data.category }}
         </span>

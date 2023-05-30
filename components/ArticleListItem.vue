@@ -10,7 +10,7 @@
       </a>
     </div>
     <div class="flex flex-row text-sm font-mono font-medium text-gray-500">
-      {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' }) }}
+      {{ asDate(article.data.publish_date)?.toLocaleString('en-US', { timeZone: 'UTC', day: 'numeric', month: 'short', year: 'numeric' }) }}
     </div>
     <div class="text-2xl font-bold dark:text-gray-100">
       <a :href="`blog/${article.uid}`">
