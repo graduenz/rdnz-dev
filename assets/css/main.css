@@ -13,7 +13,7 @@ html.dark body {
 }
 
 .prose span.pre {
-  @apply py-1 px-1.5 font-mono font-medium rounded bg-gray-100;
+  @apply py-1 px-1.5 font-mono font-medium rounded bg-gray-100 dark:bg-gray-800;
 }
 
 .prose :not(h1,h2,h3,h4,h5,h6) span.pre {
