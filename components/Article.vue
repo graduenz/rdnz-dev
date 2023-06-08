@@ -5,7 +5,7 @@
       <div class="flex flex-col items-center space-y-1">
         <div>
           <NuxtImg
-            :src="article.data.featured_image.url"
+            :src="asImageSrc(article.data.featured_image, { auto: undefined })"
             :alt="article.data.featured_image.alt"
             :width="article.data.featured_image.dimensions?.width"
             :height="article.data.featured_image.dimensions?.height"
@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import { components } from '~/slices';
 import { ArticleDocument } from '~/prismicio-types';
-import { asDate } from '@prismicio/helpers';
+import { asDate, asImageSrc } from '@prismicio/helpers';
 
 defineProps<{
   article: ArticleDocument,
