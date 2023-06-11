@@ -1,8 +1,10 @@
 <template>
-  <Section name="About" />
-  <Section name="Experience" />
-  <Section name="Projects" />
-  <Section name="Education" />
+  <div>
+    <Section name="About" />
+    <Section name="Experience" />
+    <Section name="Projects" />
+    <Section name="Education" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -26,5 +28,5 @@ useSeoMeta({
   ogDescription: meta.description,
   ogImage: meta.image,
   ogType: 'website',
-})
+});
 </script>

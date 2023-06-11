@@ -1,33 +1,34 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
-    'node': true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-essential',
+    '@nuxtjs/eslint-config-typescript',
   ],
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'parser': '@typescript-eslint/parser',
-    'sourceType': 'module',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
   },
-  'plugins': [
+  plugins: [
     '@typescript-eslint',
     'vue',
   ],
-  'rules': {
-    'indent': [
+  rules: {
+    indent: [
       'error',
       2,
     ],
-    'quotes': [
+    quotes: [
       'error',
       'single',
     ],
-    'semi': [
+    semi: [
       'error',
       'always',
     ],
@@ -46,6 +47,6 @@ module.exports = {
         caughtErrorsIgnorePattern: /^_$/.source,
       },
     ],
-    'eqeqeq': 'error',
+    eqeqeq: 'error',
   },
 };

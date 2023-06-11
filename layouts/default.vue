@@ -16,6 +16,6 @@
 import { initFlowbite } from 'flowbite';
 
 onMounted(() => {
-    initFlowbite();
-})
+  initFlowbite();
+});
 </script>

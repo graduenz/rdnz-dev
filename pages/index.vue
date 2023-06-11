@@ -23,5 +23,5 @@ useSeoMeta({
   ogDescription: meta.description,
   ogImage: meta.image,
   ogType: 'website',
-})
+});
 </script>

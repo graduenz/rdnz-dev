@@ -17,11 +17,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Inter', ...defaultTheme.fontFamily.sans],
-        'mono': ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        mono: ['"JetBrains Mono"', ...defaultTheme.fontFamily.mono],
       },
       colors: {
-        'mine': '#333a47',
+        mine: '#333a47',
         'mine-tonal': '#474e59',
       },
     },
@@ -32,4 +32,3 @@ module.exports = {
     require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 };
-
