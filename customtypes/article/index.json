@@ -30,6 +30,14 @@
         "type": "Date",
         "config": { "label": "Publish Date", "placeholder": "" }
       },
+      "lab": {
+        "type": "Link",
+        "config": {
+          "label": "Lab",
+          "select": "document",
+          "customtypes": ["lab"]
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

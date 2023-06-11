@@ -64,6 +64,17 @@ interface ArticleDocumentData {
    */
   publish_date: prismicT.DateField;
   /**
+   * Lab field in *Article*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.lab
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  lab: prismicT.RelationField<"lab">;
+  /**
    * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
@@ -150,6 +161,96 @@ export type HomepageDocument<Lang extends string = string> =
     "homepage",
     Lang
   >;
+/** Content for Lab documents */
+interface LabDocumentData {
+  /**
+   * Name field in *Lab*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  name: prismicT.KeyTextField;
+  /**
+   * Description field in *Lab*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismicT.RichTextField;
+  /**
+   * Repository URL field in *Lab*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.repository_url
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  repository_url: prismicT.KeyTextField;
+  /**
+   * Articles field in *Lab*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.articles[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  articles: prismicT.GroupField<Simplify<LabDocumentDataArticlesItem>>;
+  /**
+   * Slice Zone field in *Lab*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<LabDocumentDataSlicesSlice>;
+}
+/**
+ * Item in Lab → Articles
+ *
+ */
+export interface LabDocumentDataArticlesItem {
+  /**
+   * Article field in *Lab → Articles*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.articles[].article
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  article: prismicT.RelationField<"article">;
+}
+/**
+ * Slice for *Lab → Slice Zone*
+ *
+ */
+type LabDocumentDataSlicesSlice = never;
+/**
+ * Lab document from Prismic
+ *
+ * - **API ID**: `lab`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LabDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<Simplify<LabDocumentData>, "lab", Lang>;
 /** Content for Section documents */
 interface SectionDocumentData {
   /**
@@ -267,6 +368,7 @@ export type SettingsDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | ArticleDocument
   | HomepageDocument
+  | LabDocument
   | SectionDocument
   | SettingsDocument;
 /**
@@ -783,6 +885,10 @@ declare module "@prismicio/client" {
       ArticleDocument,
       HomepageDocumentData,
       HomepageDocument,
+      LabDocumentData,
+      LabDocumentDataArticlesItem,
+      LabDocumentDataSlicesSlice,
+      LabDocument,
       SectionDocumentData,
       SectionDocumentDataSlicesSlice,
       SectionDocument,

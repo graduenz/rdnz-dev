@@ -1,0 +1,48 @@
+{
+  "id": "lab",
+  "label": "Lab",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": { "label": "Name", "placeholder": "" }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "repository_url": {
+        "type": "Text",
+        "config": { "label": "Repository URL", "placeholder": "" }
+      },
+      "articles": {
+        "type": "Group",
+        "config": {
+          "label": "Articles",
+          "fields": {
+            "article": {
+              "type": "Link",
+              "config": {
+                "label": "Article",
+                "select": "document",
+                "customtypes": ["article"]
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": {} }
+      }
+    }
+  }
+}
