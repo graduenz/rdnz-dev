@@ -7,17 +7,16 @@
             <div
               id="logo"
               class="flex flex-row self-center"
-              >
+            >
               <img
                 src="/gr.png"
                 alt="Guilherme Raduenz"
                 class="h-auto w-12"
-                />
-              </div>
+              >
+            </div>
           </a>
         </div>
-        <div class="grow">
-        </div>
+        <div class="grow" />
         <div class="inline-flex md:hidden">
           <ThemeToggleButton />
         </div>
@@ -27,7 +26,7 @@
           class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden"
           aria-controls="navbar-default"
           aria-expanded="false"
-          >
+        >
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
         </button>
@@ -36,11 +35,11 @@
             <li
               v-for="item in menu"
               :key="item.label"
-              >
+            >
               <a
                 :href="item.href"
                 :class="[item.isActive ? 'text-black dark:text-white' : 'text-gray-500', 'cursor-pointer block px-4 py-2 font-semibold rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all']"
-                >
+              >
                 {{ item.label }}
               </a>
             </li>
@@ -49,11 +48,11 @@
             </li>
             <li
               class="my-4 md:my-0"
-              >
+            >
               <a
                 href="https://tally.so/r/woDbrx"
                 class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded-3xl text-sm px-5 py-3 mx-3 md:mx-0 transition-all"
-                >
+              >
                 Contact
               </a>
             </li>
@@ -73,6 +72,6 @@ const menu = [
 ].map(arr => ({
   label: arr[0],
   href: arr[1],
-  isActive: route.path === arr[1]
+  isActive: route.path === arr[1],
 }));
 </script>

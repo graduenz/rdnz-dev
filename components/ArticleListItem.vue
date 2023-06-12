@@ -6,7 +6,7 @@
           :src="article.data.featured_image.url"
           :alt="article.data.featured_image.alt"
           class="w-4/5 hover:w-5/6 mx-auto rounded-lg transition-all"
-          />
+        />
       </a>
     </div>
     <div class="flex flex-row text-sm font-mono font-medium text-gray-500">
@@ -24,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import { ArticleDocument } from '~/prismicio-types';
 import { asDate } from '@prismicio/helpers';
+import { ArticleDocument } from '~/prismicio-types';
 
 defineProps<{
   article: ArticleDocument,

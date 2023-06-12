@@ -1,5 +1,11 @@
 <template>
-  <ArticleList />
+  <div class="max-w-screen-lg flex flex-col space-y-4 mx-auto px-4 pt-12 md:pt-0">
+    <PageTitle
+      title="Blog"
+      subtitle="A place where you can read about cool topics in software engineering."
+    />
+    <ArticleList />
+  </div>
 </template>
 
 <script setup lang="ts">
