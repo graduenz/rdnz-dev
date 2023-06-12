@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen">
     <header>
-      <Navbar />
+      <NavigationBar />
     </header>
     <main class="mb-auto md:py-16 bg-gradient-to-t from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <slot />

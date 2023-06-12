@@ -3,9 +3,9 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <Card
+    <SimpleCard
       :toggling="slice.primary.description && slice.primary.description.length > 0"
-      >
+    >
       <template #left>
         <NuxtImg
           :src="slice.primary.image.url"
@@ -13,7 +13,7 @@
           width="64"
           height="64"
           class="rounded"
-          />
+        />
       </template>
       <template #title>
         {{ slice.primary.role }}
@@ -31,22 +31,22 @@
         <PrismicRichText
           :field="slice.primary.description"
           class="prose dark:prose-invert"
-          />
+        />
       </template>
-    </Card>
+    </SimpleCard>
   </section>
 </template>
 
 <script setup lang="ts">
-import { Content } from "@prismicio/client";
+import { Content } from '@prismicio/client';
 import { asDate } from '@prismicio/helpers';
 
 defineProps(
   getSliceComponentProps<Content.WorkExperienceSlice>([
-    "slice",
-    "index",
-    "slices",
-    "context",
-  ])
+    'slice',
+    'index',
+    'slices',
+    'context',
+  ]),
 );
 </script>

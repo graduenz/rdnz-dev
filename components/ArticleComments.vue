@@ -13,8 +13,8 @@
     :data-theme="isDarkMode ? 'transparent_dark' : 'light'"
     data-lang="en"
     crossorigin="anonymous"
-    async>
-  </Script>
+    async
+  />
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
+  <div class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
     <div class="flex flex-col space-y-12">
       <div class="flex flex-col items-center space-y-1">
         <div>
@@ -30,7 +29,7 @@
         <SliceZone
           :slices="article.data.slices"
           :components="components"
-          />
+        />
       </div>
       <div>
         <ArticleComments />
@@ -40,9 +39,9 @@
 </template>
 
 <script setup lang="ts">
+import { asDate, asImageSrc } from '@prismicio/helpers';
 import { components } from '~/slices';
 import { ArticleDocument } from '~/prismicio-types';
-import { asDate, asImageSrc } from '@prismicio/helpers';
 
 defineProps<{
   article: ArticleDocument,

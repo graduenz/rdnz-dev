@@ -7,7 +7,7 @@
       :title="s.name!"
       class="hover:text-black dark:hover:text-white transition-all"
     >
-    <font-awesome-icon :icon="['fab', s.icon]" />
+      <font-awesome-icon :icon="['fab', s.icon]" />
     </a>
   </div>
 </template>
@@ -17,13 +17,13 @@ import { SettingsDocument } from '~/prismicio-types';
 
 const { client } = usePrismic();
 
-const { data: document } = await useAsyncData("settings", async () => {
-  const documents = await client.getAllByType<SettingsDocument>("settings");
+const { data: document } = await useAsyncData('settings', async () => {
+  const documents = await client.getAllByType<SettingsDocument>('settings');
 
   if (documents && documents.length > 0) {
     return documents[0];
   } else {
-    throw createError({ statusCode: 404, message: "Page not found" });
+    throw createError({ statusCode: 404, message: 'Page not found' });
   }
 });
 </script>

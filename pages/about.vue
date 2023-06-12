@@ -1,8 +1,8 @@
 <template>
   <div>
-    <Section name="About" />
-    <Section name="Experience" />
-    <Section name="Education" />
+    <SectionView name="About" />
+    <SectionView name="Experience" />
+    <SectionView name="Education" />
   </div>
 </template>
 

@@ -2,28 +2,29 @@
   <span
     class="cursor-pointer block text-gray-500 px-2 md:px-0 pt-0.5 rounded md:border-0 hover:text-black dark:hover:text-white transition-all"
     @click="toggleTheme"
-    >
+  >
     <SunIcon
       v-if="isDarkMode"
       class="w-5 h-5"
-      />
+    />
     <MoonIcon
       v-else
       class="w-5 h-5"
-      />
+    />
   </span>
 </template>
 
 <script setup lang="ts">
 import { SunIcon } from '@heroicons/vue/24/outline';
-import { MoonIcon } from "@heroicons/vue/24/solid";
+import { MoonIcon } from '@heroicons/vue/24/solid';
 
 const colorMode = useColorMode();
 const isDarkMode = computed(() => colorMode.preference === 'dark');
 
 onMounted(() => {
-  if (colorMode.preference == 'system')
+  if (colorMode.preference === 'system') {
     colorMode.preference = 'light';
+  }
 });
 
 const toggleTheme = () => {
@@ -31,17 +32,21 @@ const toggleTheme = () => {
     ? 'light'
     : 'dark';
 
-    applyThemeChanges(colorMode.preference === 'dark');
+  applyThemeChanges(colorMode.preference === 'dark');
 };
 
 const applyThemeChanges = (dark: boolean) => {
   // Sets giscus iframe to either black or white theme
   const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
-  if (!iframe || !iframe.contentWindow) return;
-  iframe.contentWindow.postMessage({ giscus: {
-    setConfig: {
-      theme: dark ? 'transparent_dark' : 'light'
-    }
-  } }, 'https://giscus.app');
+  if (!iframe || !iframe.contentWindow) {
+    return;
+  }
+  iframe.contentWindow.postMessage({
+    giscus: {
+      setConfig: {
+        theme: dark ? 'transparent_dark' : 'light',
+      },
+    },
+  }, 'https://giscus.app');
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <Article v-if="article" :article="article" />
+  <ArticleView v-if="article" :article="article" />
 </template>
 
 <script setup lang="ts">

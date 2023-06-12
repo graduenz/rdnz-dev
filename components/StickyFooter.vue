@@ -9,7 +9,7 @@
           &horbar; Built in public, <a href="https://github.com/graduenz/rdnz-dev">here</a>.
         </p>
       </div>
-      <Social />
+      <SocialMedia />
     </div>
   </div>
 </template>
