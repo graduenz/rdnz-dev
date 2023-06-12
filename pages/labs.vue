@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <Section name="About" />
-    <Section name="Experience" />
-    <Section name="Education" />
+  <div class="max-w-screen-lg flex flex-col space-y-4 mx-auto px-4 pt-12 md:pt-0">
+    <PageTitle
+      title="Labs"
+      subtitle="You can know all my projects and experiments here."
+    />
+    <LabList />
   </div>
 </template>
 
 <script setup lang="ts">
 const meta = {
-  title: 'About ― Guilherme Raduenz',
-  description: 'Guilherme Raduenz\'s about page',
+  title: 'Labs ― Guilherme Raduenz',
+  description: 'Guilherme Raduenz\'s projects and experiments',
   image: 'https://rdnz.dev/gr-og.png',
   twitter: '@graduenz',
 };

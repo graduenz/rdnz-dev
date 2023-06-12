@@ -208,6 +208,17 @@ interface LabDocumentData {
    */
   articles: prismicT.GroupField<Simplify<LabDocumentDataArticlesItem>>;
   /**
+   * Date field in *Lab*
+   *
+   * - **Field Type**: Timestamp
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lab.date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
+   *
+   */
+  date: prismicT.TimestampField;
+  /**
    * Slice Zone field in *Lab*
    *
    * - **Field Type**: Slice Zone

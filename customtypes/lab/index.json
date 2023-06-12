@@ -38,6 +38,10 @@
           }
         }
       },
+      "date": {
+        "type": "Timestamp",
+        "config": { "label": "Date", "placeholder": "" }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

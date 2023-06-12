@@ -69,6 +69,7 @@ const route = useRoute();
 const menu = [
   ['Blog', '/'],
   ['About', '/about'],
+  ['Labs', '/labs'],
 ].map(arr => ({
   label: arr[0],
   href: arr[1],
