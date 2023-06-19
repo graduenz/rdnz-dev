@@ -45,17 +45,6 @@
 				"__TYPE__": "FieldContent",
 				"type": "Date",
 				"value": "2013-10-07"
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Et irure ea occaecat in cillum nostrud sint dolore exercitation. Minim qui nostrud laborum ut officia pariatur proident minim aliqua tempor incididunt."
-						}
-					}
-				]
 			}
 		},
 		"items": []

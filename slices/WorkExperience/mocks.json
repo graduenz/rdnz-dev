@@ -50,17 +50,6 @@
 				"__TYPE__": "FieldContent",
 				"value": "carbon",
 				"type": "Text"
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ex ut esse irure ex magna et minim enim adipisicing incididunt. Et excepteur adipisicing mollit esse proident ipsum qui pariatur aliqua nulla irure et."
-						}
-					}
-				]
 			}
 		},
 		"items": []

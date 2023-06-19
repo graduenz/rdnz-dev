@@ -1,15 +1,15 @@
 <template>
   <div>
-    <SectionView name="About" />
-    <SectionView name="Experience" />
-    <SectionView name="Education" />
+    <SectionView name="Sobre mim" />
+    <SectionView name="Experiência" />
+    <SectionView name="Educação" />
   </div>
 </template>
 
 <script setup lang="ts">
 const meta = {
-  title: 'About ― Guilherme Raduenz',
-  description: 'Guilherme Raduenz\'s about page',
+  title: 'Sobre ― Guilherme Raduenz',
+  description: 'Conheça mais sobre mim aqui',
   image: 'https://rdnz.dev/gr-og.png',
   twitter: '@graduenz',
 };

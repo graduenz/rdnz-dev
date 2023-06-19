@@ -1,6 +1,6 @@
 <template>
   <div class="w-full p-2 flex flex-row">
-    <div class="pt-1 flex-shrink-0 w-16">
+    <div class="pt-2 flex-shrink-0 w-14">
       <slot name="left" />
     </div>
     <div class="pl-4 flex flex-col grow">
@@ -25,15 +25,6 @@
             @click="expand"
           />
         </div>
-      </div>
-      <div
-        v-if="!toggling || expanded"
-        class="mt-4"
-      >
-        <slot name="content" />
-      </div>
-      <div class="mt-4 flex flex-row space-x-4">
-        <slot name="links" />
       </div>
     </div>
   </div>

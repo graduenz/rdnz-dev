@@ -3,9 +3,7 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <SimpleCard
-      :toggling="slice.primary.description && slice.primary.description.length > 0"
-    >
+    <SimpleCard>
       <template #left>
         <NuxtImg
           :src="slice.primary.image.url"
@@ -23,14 +21,8 @@
           {{ slice.primary.degree }} &horbar; {{ slice.primary.school }}
         </p>
         <p>
-          From {{ asDate(slice.primary.since)?.toLocaleString('en-US', { month: 'short', year: 'numeric' }) }}
+          Desde {{ asDate(slice.primary.since)?.toLocaleString('pt-BR', { month: 'long', year: 'numeric' }) }}
         </p>
-      </template>
-      <template #content>
-        <PrismicRichText
-          :field="slice.primary.description"
-          class="prose dark:prose-invert"
-        />
       </template>
     </SimpleCard>
   </section>

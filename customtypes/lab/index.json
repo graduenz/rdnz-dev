@@ -1,7 +1,7 @@
 {
   "id": "lab",
   "label": "Lab",
-  "repeatable": false,
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
@@ -22,30 +22,9 @@
         "type": "Text",
         "config": { "label": "Repository URL", "placeholder": "" }
       },
-      "articles": {
-        "type": "Group",
-        "config": {
-          "label": "Articles",
-          "fields": {
-            "article": {
-              "type": "Link",
-              "config": {
-                "label": "Article",
-                "select": "document",
-                "customtypes": ["article"]
-              }
-            }
-          }
-        }
-      },
       "date": {
-        "type": "Timestamp",
+        "type": "Date",
         "config": { "label": "Date", "placeholder": "" }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": { "choices": {} }
       }
     }
   }

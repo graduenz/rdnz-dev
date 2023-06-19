@@ -16,7 +16,7 @@ const { client } = usePrismic();
 const { data: documents } = await useAsyncData('Labs', async () => {
   const documents = await client.getAllByType<LabDocument>('lab', {
     orderings: {
-      field: 'my.lab.publish_date',
+      field: 'my.lab.date',
       direction: 'desc',
     },
   });

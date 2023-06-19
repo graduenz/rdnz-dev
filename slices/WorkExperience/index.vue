@@ -3,9 +3,7 @@
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
   >
-    <SimpleCard
-      :toggling="slice.primary.description && slice.primary.description.length > 0"
-    >
+    <SimpleCard>
       <template #left>
         <NuxtImg
           :src="slice.primary.image.url"
@@ -19,19 +17,16 @@
         {{ slice.primary.role }}
       </template>
       <template #subtitle>
-        <p>
-          {{ asDate(slice.primary.since)?.toLocaleString('en-US', { month: 'short', year: 'numeric' }) }}
-          to {{ asDate(slice.primary.until)?.toLocaleString('en-US', { month: 'short', year: 'numeric' }) ?? 'present' }}
+        <p v-if="isPastJob">
+          De {{ asDate(slice.primary.since)?.toLocaleString('pt-BR', { month: 'long', year: 'numeric' }) }}
+          a {{ asDate(slice.primary.until)?.toLocaleString('pt-BR', { month: 'long', year: 'numeric' }) ?? 'present' }}
+        </p>
+        <p v-else>
+          Desde {{ asDate(slice.primary.since)?.toLocaleString('pt-BR', { month: 'long', year: 'numeric' }) }}
         </p>
         <p>
           {{ slice.primary.company }} &horbar; {{ slice.primary.location }}
         </p>
-      </template>
-      <template #content>
-        <PrismicRichText
-          :field="slice.primary.description"
-          class="prose dark:prose-invert"
-        />
       </template>
     </SimpleCard>
   </section>
@@ -41,7 +36,7 @@
 import { Content } from '@prismicio/client';
 import { asDate } from '@prismicio/helpers';
 
-defineProps(
+const props = defineProps(
   getSliceComponentProps<Content.WorkExperienceSlice>([
     'slice',
     'index',
@@ -49,4 +44,6 @@ defineProps(
     'context',
   ]),
 );
+
+const isPastJob = computed(() => !!props.slice.primary.until);
 </script>

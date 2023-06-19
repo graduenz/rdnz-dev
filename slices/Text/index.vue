@@ -5,22 +5,20 @@
   >
     <PrismicRichText
       :field="slice.primary.text"
-      class="prose prose-lg dark:prose-invert"
-      />
+      class="prose prose-lg dark:prose-invert text-justify"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Content } from "@prismicio/client";
+import { Content } from '@prismicio/client';
 
-// The array passed to `getSliceComponentProps` is purely optional.
-// Consider it as a visual hint for you when templating your slice.
 defineProps(
   getSliceComponentProps<Content.TextSlice>([
-    "slice",
-    "index",
-    "slices",
-    "context",
-  ])
+    'slice',
+    'index',
+    'slices',
+    'context',
+  ]),
 );
 </script>

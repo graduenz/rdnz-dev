@@ -41,7 +41,7 @@
             >
               <a
                 :href="item.href"
-                :class="[item.isActive ? 'text-black dark:text-white' : 'text-gray-500', 'cursor-pointer block px-4 py-2 font-semibold rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all']"
+                :class="[item.isActive ? 'text-black dark:text-white' : 'text-gray-500', 'cursor-pointer block px-4 py-2 font-medium rounded md:border-0 hover:text-black dark:hover:text-white md:p-0 transition-all']"
               >
                 {{ item.label }}
               </a>
@@ -56,7 +56,7 @@
                 href="https://tally.so/r/woDbrx"
                 class="text-white drop-shadow-md bg-mine hover:bg-mine-tonal font-bold rounded-3xl text-sm px-5 py-3 mx-3 md:mx-0 transition-all"
               >
-                Contact
+                Contato
               </a>
             </li>
           </ul>
@@ -71,7 +71,7 @@ const route = useRoute();
 
 const menu = [
   ['Blog', '/'],
-  ['About', '/about'],
+  ['Sobre', '/sobre'],
   ['Labs', '/labs'],
 ].map(arr => ({
   label: arr[0],

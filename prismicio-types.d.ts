@@ -110,57 +110,6 @@ export type ArticleDocument<Lang extends string = string> =
     "article",
     Lang
   >;
-/** Content for Homepage documents */
-interface HomepageDocumentData {
-  /**
-   * Title field in *Homepage*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  title: prismicT.KeyTextField;
-  /**
-   * Introduction field in *Homepage*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.introduction
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  introduction: prismicT.RichTextField;
-  /**
-   * Scroll Button Text field in *Homepage*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.scroll_button_text
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  scroll_button_text: prismicT.KeyTextField;
-}
-/**
- * Homepage document from Prismic
- *
- * - **API ID**: `homepage`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type HomepageDocument<Lang extends string = string> =
-  prismicT.PrismicDocumentWithoutUID<
-    Simplify<HomepageDocumentData>,
-    "homepage",
-    Lang
-  >;
 /** Content for Lab documents */
 interface LabDocumentData {
   /**
@@ -197,65 +146,22 @@ interface LabDocumentData {
    */
   repository_url: prismicT.KeyTextField;
   /**
-   * Articles field in *Lab*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lab.articles[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/group
-   *
-   */
-  articles: prismicT.GroupField<Simplify<LabDocumentDataArticlesItem>>;
-  /**
    * Date field in *Lab*
    *
-   * - **Field Type**: Timestamp
+   * - **Field Type**: Date
    * - **Placeholder**: *None*
    * - **API ID Path**: lab.date
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/timestamp
+   * - **Documentation**: https://prismic.io/docs/core-concepts/date
    *
    */
-  date: prismicT.TimestampField;
-  /**
-   * Slice Zone field in *Lab*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lab.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-   *
-   */
-  slices: prismicT.SliceZone<LabDocumentDataSlicesSlice>;
+  date: prismicT.DateField;
 }
-/**
- * Item in Lab → Articles
- *
- */
-export interface LabDocumentDataArticlesItem {
-  /**
-   * Article field in *Lab → Articles*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lab.articles[].article
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-   *
-   */
-  article: prismicT.RelationField<"article">;
-}
-/**
- * Slice for *Lab → Slice Zone*
- *
- */
-type LabDocumentDataSlicesSlice = never;
 /**
  * Lab document from Prismic
  *
  * - **API ID**: `lab`
- * - **Repeatable**: `false`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
@@ -293,7 +199,6 @@ interface SectionDocumentData {
  */
 type SectionDocumentDataSlicesSlice =
   | EducationSlice
-  | ProjectSlice
   | WorkExperienceSlice
   | TextSlice;
 /**
@@ -378,7 +283,6 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 export type AllDocumentTypes =
   | ArticleDocument
-  | HomepageDocument
   | LabDocument
   | SectionDocument
   | SettingsDocument;
@@ -490,16 +394,6 @@ interface EducationSliceDefaultPrimary {
    *
    */
   since: prismicT.DateField;
-  /**
-   * Description field in *Education → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: education.primary.description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
 }
 /**
  * Default variation for Education Slice
@@ -584,102 +478,6 @@ type ImageSliceVariation = ImageSliceDefault;
  *
  */
 export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
-/**
- * Primary content in Project → Primary
- *
- */
-interface ProjectSliceDefaultPrimary {
-  /**
-   * Name field in *Project → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.name
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  name: prismicT.KeyTextField;
-  /**
-   * Image field in *Project → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.image
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  image: prismicT.ImageField<never>;
-  /**
-   * Type field in *Project → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.type
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  type: prismicT.KeyTextField;
-  /**
-   * Project URL field in *Project → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.project_url
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  project_url: prismicT.KeyTextField;
-  /**
-   * Repository URL field in *Project → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.repository_url
-   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-   *
-   */
-  repository_url: prismicT.KeyTextField;
-  /**
-   * Description field in *Project → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: project.primary.description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
-}
-/**
- * Default variation for Project Slice
- *
- * - **API ID**: `default`
- * - **Description**: `Default`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type ProjectSliceDefault = prismicT.SharedSliceVariation<
-  "default",
-  Simplify<ProjectSliceDefaultPrimary>,
-  never
->;
-/**
- * Slice variation for *Project*
- *
- */
-type ProjectSliceVariation = ProjectSliceDefault;
-/**
- * Project Shared Slice
- *
- * - **API ID**: `project`
- * - **Description**: `Project`
- * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
- *
- */
-export type ProjectSlice = prismicT.SharedSlice<
-  "project",
-  ProjectSliceVariation
->;
 /**
  * Primary content in Quote → Primary
  *
@@ -841,16 +639,6 @@ interface WorkExperienceSliceDefaultPrimary {
    *
    */
   location: prismicT.KeyTextField;
-  /**
-   * Description field in *WorkExperience → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: work_experience.primary.description
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  description: prismicT.RichTextField;
 }
 /**
  * Default variation for WorkExperience Slice
@@ -894,11 +682,7 @@ declare module "@prismicio/client" {
       ArticleDocumentData,
       ArticleDocumentDataSlicesSlice,
       ArticleDocument,
-      HomepageDocumentData,
-      HomepageDocument,
       LabDocumentData,
-      LabDocumentDataArticlesItem,
-      LabDocumentDataSlicesSlice,
       LabDocument,
       SectionDocumentData,
       SectionDocumentDataSlicesSlice,
@@ -919,10 +703,6 @@ declare module "@prismicio/client" {
       ImageSliceDefault,
       ImageSliceVariation,
       ImageSlice,
-      ProjectSliceDefaultPrimary,
-      ProjectSliceDefault,
-      ProjectSliceVariation,
-      ProjectSlice,
       QuoteSliceDefaultPrimary,
       QuoteSliceDefault,
       QuoteSliceVariation,

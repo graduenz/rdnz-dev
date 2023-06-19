@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1 class="scroll-m-16 text-5xl font-black whitespace-nowrap dark:text-gray-100">
+    <h1 class="scroll-m-16 text-6xl font-bold  tracking-tighter whitespace-nowrap text-gray-800 dark:text-gray-200">
       {{ title }}
     </h1>
-    <h2 class="text-gray-500 text-lg pt-2">
+    <h2 class="pt-2 text-gray-500 text-lg">
       {{ subtitle }}
     </h2>
   </div>

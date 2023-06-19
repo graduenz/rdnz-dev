@@ -15,7 +15,6 @@
         "config": {
           "choices": {
             "education": { "type": "SharedSlice" },
-            "project": { "type": "SharedSlice" },
             "work_experience": { "type": "SharedSlice" },
             "text": { "type": "SharedSlice" }
           }

@@ -2,7 +2,7 @@
   <div class="max-w-screen-lg md:w-[40rem] mx-auto px-4 pb-0 md:pb-8">
     <h1
       :id="name"
-      class="scroll-m-16 py-8 text-5xl font-bold whitespace-nowrap dark:text-gray-100"
+      class="scroll-m-16 py-8 text-6xl font-bold tracking-tighter whitespace-nowrap text-gray-800 dark:text-gray-200"
     >
       {{ name }}
     </h1>
