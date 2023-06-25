@@ -7,17 +7,19 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "preformatted",
 						"content": {
-							"text": "Ipsum est ut eu fugiat in non."
-						}
+							"text": "Console.WriteLine(\"code\");",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
 			"language": {
 				"__TYPE__": "FieldContent",
-				"value": "freedom",
-				"type": "Text"
+				"type": "Text",
+				"value": "c#"
 			}
 		},
 		"items": []
