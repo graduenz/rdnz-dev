@@ -3,8 +3,8 @@
     <div class="aspect-square flex items-center">
       <a :href="`blog/${article.uid}`">
         <NuxtImg
-          :src="article.data.featured_image.url"
-          :alt="article.data.featured_image.alt"
+          :src="article.data.featured_image.url || undefined"
+          :alt="article.data.featured_image.alt || undefined"
           class="w-4/5 hover:w-5/6 mx-auto rounded-lg transition-all"
         />
       </a>

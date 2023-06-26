@@ -4,8 +4,8 @@
       <div class="flex flex-col items-center space-y-1">
         <div>
           <NuxtImg
-            :src="asImageSrc(article.data.featured_image, { auto: undefined })"
-            :alt="article.data.featured_image.alt"
+            :src="asImageSrc(article.data.featured_image, { auto: undefined }) || undefined"
+            :alt="article.data.featured_image.alt || undefined"
             :width="article.data.featured_image.dimensions?.width"
             :height="article.data.featured_image.dimensions?.height"
             class="rounded"
@@ -27,7 +27,7 @@
         v-if="hasLab"
         class="text-center"
       >
-        <GitHubButton :url="lab?.data.repository_url" />
+        <GitHubButton :url="lab?.data.repository_url!" />
       </div>
       <div class="flex flex-col space-y-12">
         <SliceZone

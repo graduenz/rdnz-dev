@@ -2,7 +2,7 @@
   <div class="pt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
     <LabListItem
       v-for="lab in documents"
-      :key="lab.data.name"
+      :key="lab.data.name!"
       :lab="lab"
     />
   </div>
