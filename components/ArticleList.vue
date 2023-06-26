@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div class="pt-12 flex flex-col space-y-8">
     <ArticleListItem
       v-for="article in documents"
       :key="article.uid"

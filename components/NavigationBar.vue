@@ -1,7 +1,7 @@
 <template>
   <div class="relative">
     <nav class="z-50 top-0 left-0 right-0 border-b dark:border-gray-800">
-      <div class="max-w-screen-lg flex flex-wrap items-center mx-auto py-4 px-4">
+      <div class="max-w-screen-lg flex flex-wrap items-center mx-auto py-8 px-4">
         <div class="">
           <a href="/" class="flex items-center rounded bg-mine hover:bg-mine-tonal">
             <div

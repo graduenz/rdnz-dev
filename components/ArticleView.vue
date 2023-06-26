@@ -1,38 +1,52 @@
 <template>
-  <div class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
-    <div class="flex flex-col space-y-12">
-      <div class="flex flex-col items-center space-y-1">
+  <div class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-8 pb-0 md:pb-8">
+    <div class="flex flex-col space-y-4">
+      <div class="text-5xl md:text-6xl font-extrabold text-gray-800 dark:text-gray-200 tracking-tight">
+        {{ article.data.title }}
+      </div>
+      <div class="prose prose-lg dark:prose-invert text-gray-500">
+        {{ article.data.subtitle }}
+      </div>
+      <div class="pb-4 flex flex-row space-x-2.5 border-b">
+        <div>
+          <img
+            src="/me.jpg"
+            alt="Guilherme Raduenz"
+            class="h-auto w-12 rounded-full"
+          >
+        </div>
+        <div class="flex flex-col space-y-0.5">
+          <div class="font-medium">
+            Guilherme Raduenz
+          </div>
+          <div class="text-sm text-gray-500">
+            {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
+            &middot;
+            {{ article.data.category }}
+          </div>
+        </div>
+      </div>
+      <div class="py-8 flex flex-col items-center space-y-1">
         <div>
           <NuxtImg
             :src="asImageSrc(article.data.featured_image, { auto: undefined }) || undefined"
             :alt="article.data.featured_image.alt || undefined"
             :width="article.data.featured_image.dimensions?.width"
             :height="article.data.featured_image.dimensions?.height"
-            class="rounded"
+            class="rounded-3xl"
           />
         </div>
-      </div>
-      <div class="font-medium text-lg text-gray-500 mx-auto">
-        {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'numeric', year: 'numeric' }) }}
-        &horbar;
-        {{ article.data.category }}
-      </div>
-      <div class="text-5xl md:text-6xl font-extrabold text-gray-800 dark:text-gray-200 text-center tracking-tight">
-        {{ article.data.title }}
-      </div>
-      <div class="prose prose-lg dark:prose-invert text-gray-500 text-center">
-        {{ article.data.subtitle }}
-      </div>
-      <div
-        v-if="hasLab"
-        class="text-center"
-      >
-        <GitHubButton :url="lab?.data.repository_url!" />
       </div>
       <div class="flex flex-col space-y-12">
         <SliceZone
           :slices="article.data.slices"
           :components="components"
+        />
+      </div>
+      <div class="py-12 text-center">
+        <GitHubButton
+          :url="lab?.data.repository_url!"
+          label="Ver código fonte no GitHub"
         />
       </div>
       <div>

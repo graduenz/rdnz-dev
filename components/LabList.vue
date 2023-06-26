@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div class="pt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
     <LabListItem
       v-for="lab in documents"
       :key="lab.data.name!"

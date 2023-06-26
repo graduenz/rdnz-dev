@@ -1,22 +1,40 @@
 <template>
-  <div class="p-6 flex flex-col space-y-2 rounded-lg bg-gradient-to-b from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900">
-    <div class="aspect-square flex items-center">
-      <a :href="`blog/${article.uid}`">
+  <div class="flex flex-col space-y-4 md:space-y-0">
+    <a
+      :href="`blog/${article.uid}`"
+      class="block md:hidden shrink-0"
+    >
+      <NuxtImg
+        :src="article.data.featured_image.url || undefined"
+        :alt="article.data.featured_image.alt || undefined"
+        class="w-3/5 mx-auto rounded-lg"
+      />
+    </a>
+    <div class="pb-8 flex flex-row space-x-4 border-b dark:border-gray-800">
+      <div class="grow flex flex-col space-y-1">
+        <div class="text-sm text-gray-500">
+          {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
+          &middot;
+          {{ article.data.category }}
+        </div>
+        <div class="text-xl font-bold text-gray-800 dark:text-gray-200 tracking-tight">
+          <a :href="`blog/${article.uid}`">
+            {{ article.data.title }}
+          </a>
+        </div>
+        <div class="text-gray-500">
+          {{ article.data.subtitle }}
+        </div>
+      </div>
+      <a
+        :href="`blog/${article.uid}`"
+        class="hidden md:block shrink-0"
+      >
         <NuxtImg
           :src="article.data.featured_image.url || undefined"
           :alt="article.data.featured_image.alt || undefined"
-          class="w-4/5 hover:w-5/6 mx-auto rounded-lg transition-all"
+          class="w-32 mx-auto rounded-lg"
         />
-      </a>
-    </div>
-    <div class="flex flex-row font-medium text-gray-500">
-      {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'numeric', year: 'numeric' }) }}
-      &horbar;
-      {{ article.data.category }}
-    </div>
-    <div class="text-xl font-bold text-gray-800 dark:text-gray-200 tracking-tight">
-      <a :href="`blog/${article.uid}`">
-        {{ article.data.title }}
       </a>
     </div>
   </div>
