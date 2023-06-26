@@ -11,7 +11,7 @@
 <script setup lang="ts">
 const meta = {
   title: 'Labs ― Guilherme Raduenz',
-  description: 'Você pode conhecer meus projetos e experimentos aqui.',
+  description: 'Aqui você pode conhecer todos os meus projetos e experimentos.',
   image: 'https://rdnz.dev/gr-og.png',
   twitter: '@graduenz',
 };
