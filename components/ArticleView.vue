@@ -7,7 +7,7 @@
       <div class="prose prose-lg dark:prose-invert text-gray-500">
         {{ article.data.subtitle }}
       </div>
-      <div class="pb-4 flex flex-row space-x-2.5 border-b">
+      <div class="py-4 pb-8 flex flex-row space-x-3 border-b dark:border-gray-800">
         <div>
           <img
             src="/me.jpg"
@@ -16,7 +16,7 @@
           >
         </div>
         <div class="flex flex-col space-y-0.5">
-          <div class="font-medium">
+          <div class="font-medium dark:text-gray-100">
             Guilherme Raduenz
           </div>
           <div class="text-sm text-gray-500">
