@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-8 pb-0 md:pb-8">
+  <div class="max-w-screen-lg md:w-[48rem] mx-auto mt-12 md:mt-8 px-4 pb-0 md:pb-8">
     <div class="flex flex-col space-y-4">
       <div class="text-5xl md:text-6xl font-extrabold text-gray-800 dark:text-gray-200 tracking-tight">
         {{ article.data.title }}

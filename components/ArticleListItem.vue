@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-4 md:space-y-0">
+  <div class="flex flex-col space-y-8 md:space-y-0">
     <a
       :href="`blog/${article.uid}`"
       class="block md:hidden shrink-0"
@@ -7,7 +7,7 @@
       <NuxtImg
         :src="article.data.featured_image.url || undefined"
         :alt="article.data.featured_image.alt || undefined"
-        class="w-3/5 mx-auto rounded-lg"
+        class="w-full mx-auto rounded-3xl"
       />
     </a>
     <div class="pb-8 flex flex-row space-x-4 border-b dark:border-gray-800">

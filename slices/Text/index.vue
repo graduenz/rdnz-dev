@@ -5,7 +5,7 @@
   >
     <PrismicRichText
       :field="slice.primary.text"
-      class="prose prose-lg dark:prose-invert text-justify"
+      class="prose prose-lg dark:prose-invert"
     />
   </div>
 </template>
