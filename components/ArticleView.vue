@@ -7,23 +7,34 @@
       <div class="prose prose-lg dark:prose-invert text-gray-500">
         {{ article.data.subtitle }}
       </div>
-      <div class="py-4 pb-8 flex flex-row space-x-3 border-b dark:border-gray-800">
-        <div>
-          <img
-            src="/me.jpg"
-            alt="Guilherme Raduenz"
-            class="h-auto w-12 rounded-full"
-          >
+      <div class="py-4 pb-8 flex flex-col md:flex-row space-y-4 md:space-y-0 border-b dark:border-gray-800">
+        <div class="grow flex flex-row space-x-4">
+          <div>
+            <img
+              src="/me.jpg"
+              alt="Guilherme Raduenz"
+              class="h-auto w-14 rounded-full"
+            >
+          </div>
+          <div class="grow flex flex-col">
+            <div class="font-medium text-lg dark:text-gray-100">
+              Guilherme Raduenz
+            </div>
+            <div class="text-gray-500">
+              {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
+              &middot;
+              {{ article.data.category }}
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col space-y-0.5">
-          <div class="font-medium dark:text-gray-100">
-            Guilherme Raduenz
-          </div>
-          <div class="text-sm text-gray-500">
-            {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
-            &middot;
-            {{ article.data.category }}
-          </div>
+        <div
+          v-if="lab?.data.repository_url"
+          class="py-4"
+        >
+          <GitHubButton
+            :url="lab?.data.repository_url!"
+            label="Repositório no GitHub"
+          />
         </div>
       </div>
       <div class="py-8 flex flex-col items-center space-y-1">
@@ -41,12 +52,6 @@
         <SliceZone
           :slices="article.data.slices"
           :components="components"
-        />
-      </div>
-      <div class="py-12 text-center">
-        <GitHubButton
-          :url="lab?.data.repository_url!"
-          label="Ver código fonte no GitHub"
         />
       </div>
       <div>
