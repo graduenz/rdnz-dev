@@ -38,7 +38,6 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "@heroicons/vue": "^2.0.18",
     "@prismicio/helpers": "^2.3.9",
-    "flowbite": "^1.6.5",
     "shiki": "^0.14.2"
   }
 }

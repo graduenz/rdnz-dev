@@ -229,6 +229,28 @@ interface SettingsDocumentData {
    *
    */
   social: prismicT.GroupField<Simplify<SettingsDocumentDataSocialItem>>;
+  /**
+   * WhatsApp field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.whatsapp
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  whatsapp: prismicT.KeyTextField;
+  /**
+   * Email field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  email: prismicT.KeyTextField;
 }
 /**
  * Item in Settings → Social

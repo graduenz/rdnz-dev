@@ -24,6 +24,14 @@
             }
           }
         }
+      },
+      "whatsapp": {
+        "type": "Text",
+        "config": { "label": "WhatsApp", "placeholder": "" }
+      },
+      "email": {
+        "type": "Text",
+        "config": { "label": "Email", "placeholder": "" }
       }
     }
   }

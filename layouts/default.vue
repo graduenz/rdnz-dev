@@ -1,4 +1,8 @@
+<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
+  <Head>
+    <Meta name="theme-color" :content="isDarkMode ? '#020617' : '#ffffff'" />
+  </Head>
   <div class="flex flex-col h-screen">
     <header>
       <NavigationBar />
@@ -13,9 +17,6 @@
 </template>
 
 <script setup lang="ts">
-import { initFlowbite } from 'flowbite';
-
-onMounted(() => {
-  initFlowbite();
-});
+const colorMode = useColorMode();
+const isDarkMode = computed(() => colorMode.preference === 'dark');
 </script>

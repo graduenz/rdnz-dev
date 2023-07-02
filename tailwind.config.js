@@ -11,7 +11,6 @@ module.exports = {
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
     './app.vue',
-    './node_modules/flowbite.{js,ts}',
   ],
   darkMode: 'class',
   theme: {
@@ -28,7 +27,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('flowbite/plugin'),
     require('tailwind-scrollbar')({ nocompatible: true }),
   ],
 };
