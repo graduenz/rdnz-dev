@@ -15,7 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import { SunIcon, MoonIcon } from '@heroicons/vue/24/outline';
+import { SunIcon } from '@heroicons/vue/24/outline';
+import { MoonIcon } from '@heroicons/vue/24/solid';
 
 const colorMode = useColorMode();
 const isDarkMode = computed(() => colorMode.preference === 'dark');

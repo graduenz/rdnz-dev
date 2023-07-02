@@ -43,6 +43,7 @@
             <li class="pt-1">
               <a
                 :href="`mailto:${settings?.data.email}`"
+                title="E-mail"
                 class="text-gray-500 hover:text-black dark:hover:text-white transition-all"
               >
                 <EnvelopeIcon class="w-6 h-6" />
@@ -51,6 +52,7 @@
             <li>
               <a
                 :href="`https://wa.me/${settings?.data.whatsapp}`"
+                title="WhatsApp"
                 class="text-gray-500 hover:text-black dark:hover:text-white transition-all text-2xl"
               >
                 <font-awesome-icon :icon="['fab', 'whatsapp']" />
@@ -87,7 +89,7 @@
 </template>
 
 <script setup lang="ts">
-import { Bars3Icon, ChatBubbleOvalLeftEllipsisIcon, EnvelopeIcon } from '@heroicons/vue/24/outline';
+import { Bars3Icon, EnvelopeIcon } from '@heroicons/vue/24/solid';
 import { SettingsDocument } from '~/prismicio-types';
 
 const route = useRoute();
