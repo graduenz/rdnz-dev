@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <a
     :class="[
@@ -8,16 +9,17 @@
       'dark:text-black dark:bg-white dark:hover:bg-gray-200']"
     :href="url"
   >
-    <img
-      :src="isDarkMode ? '/github-mark.svg' : '/github-mark-white.svg'"
-      :alt="label"
-      class="inline-block aspect-square w-5 mr-2 -mt-1"
-    >
+    <div
+      class="inline-block mr-2 pt-1 w-5 h-5 fill-white dark:fill-black"
+      v-html="siGithub.svg"
+    />
     <span>{{ label }}</span>
   </a>
 </template>
 
 <script setup lang="ts">
+import { siGithub } from 'simple-icons';
+
 const props = defineProps({
   url: {
     required: true,
@@ -38,7 +40,4 @@ const getSizePaddings = () =>
   props.size === 'sm'
     ? 'py-2 px-3'
     : 'py-3 px-4';
-
-const colorMode = useColorMode();
-const isDarkMode = computed(() => colorMode.preference === 'dark');
 </script>
