@@ -16,8 +16,9 @@
             </div>
           </a>
         </div>
+        <div class="grow" />
         <div>
-          <ul class="hidden md:flex pl-8 flex-row space-x-4">
+          <ul class="hidden md:flex pr-8 flex-row space-x-4">
             <li
               v-for="item in menu"
               :key="item.label"
@@ -31,7 +32,6 @@
             </li>
           </ul>
         </div>
-        <div class="grow" />
         <div
           id="navbar-default"
           class="block w-auto"
