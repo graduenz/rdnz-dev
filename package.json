@@ -34,10 +34,9 @@
     "tailwindcss": "^3.3.2"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
     "@heroicons/vue": "^2.0.18",
     "@prismicio/helpers": "^2.3.9",
-    "shiki": "^0.14.2"
+    "shiki": "^0.14.2",
+    "simple-icons": "^9.4.0"
   }
 }
