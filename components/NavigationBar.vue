@@ -37,28 +37,10 @@
           class="block w-auto"
         >
           <ul class="flex flex-row space-x-4">
-            <li class="pt-0.5">
+            <li>
               <ThemeToggleButton />
             </li>
-            <li class="pt-1">
-              <a
-                :href="`mailto:${settings?.data.email}`"
-                title="E-mail"
-                class="text-gray-500 hover:text-black dark:hover:text-white transition-all"
-              >
-                <EnvelopeIcon class="w-6 h-6" />
-              </a>
-            </li>
-            <li>
-              <a
-                :href="`https://wa.me/${settings?.data.whatsapp}`"
-                title="WhatsApp"
-                class="text-gray-500 hover:text-black dark:hover:text-white transition-all text-2xl"
-              >
-                <font-awesome-icon :icon="['fab', 'whatsapp']" />
-              </a>
-            </li>
-            <li class="block md:hidden pt-1">
+            <li class="block md:hidden">
               <span
                 class="cursor-pointer text-gray-500 hover:text-black dark:hover:text-white transition-all"
                 @click="toggleMenu"
@@ -89,8 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { Bars3Icon, EnvelopeIcon } from '@heroicons/vue/24/solid';
-import { SettingsDocument } from '~/prismicio-types';
+import { Bars3Icon } from '@heroicons/vue/24/solid';
 
 const route = useRoute();
 
@@ -98,6 +79,7 @@ const menu = [
   ['Blog', '/'],
   ['Sobre', '/sobre'],
   ['Labs', '/labs'],
+  ['Contato', '/contato'],
 ].map(arr => ({
   label: arr[0],
   href: arr[1],
@@ -108,16 +90,4 @@ const menuToggleOn = ref(false);
 const toggleMenu = () => {
   menuToggleOn.value = !menuToggleOn.value;
 };
-
-const { client } = usePrismic();
-
-const { data: settings } = await useAsyncData('settings', async () => {
-  const documents = await client.getAllByType<SettingsDocument>('settings');
-
-  if (documents && documents.length > 0) {
-    return documents[0];
-  } else {
-    throw createError({ statusCode: 404, message: 'Page not found' });
-  }
-});
 </script>
