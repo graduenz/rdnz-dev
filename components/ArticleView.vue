@@ -7,34 +7,23 @@
       <div class="prose prose-lg dark:prose-invert text-gray-500">
         {{ article.data.subtitle }}
       </div>
-      <div class="py-4 pb-8 flex flex-col md:flex-row space-y-4 md:space-y-0 border-b dark:border-gray-800">
-        <div class="grow flex flex-row space-x-4">
-          <div>
-            <img
-              src="/me.jpg"
-              alt="Guilherme Raduenz"
-              class="h-auto w-14 rounded-full"
-            >
-          </div>
-          <div class="grow flex flex-col">
-            <div class="font-medium text-lg dark:text-gray-100">
-              Guilherme Raduenz
-            </div>
-            <div class="text-gray-500">
-              {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
-              &middot;
-              {{ article.data.category }}
-            </div>
-          </div>
+      <div class="py-4 pb-8 flex flex-row space-x-4 border-b dark:border-gray-800">
+        <div>
+          <img
+            src="/me.jpg"
+            alt="Guilherme Raduenz"
+            class="h-auto w-14 rounded-full"
+          >
         </div>
-        <div
-          v-if="lab?.data.repository_url"
-          class="py-4"
-        >
-          <GitHubButton
-            :url="lab?.data.repository_url!"
-            label="Repositório no GitHub"
-          />
+        <div class="grow flex flex-col">
+          <div class="font-medium text-lg dark:text-gray-100">
+            Guilherme Raduenz
+          </div>
+          <div class="text-gray-500">
+            {{ asDate(article.data.publish_date)?.toLocaleString('pt-BR', { timeZone: 'UTC', day: 'numeric', month: 'long', year: 'numeric' }) }}
+            &middot;
+            {{ article.data.category }}
+          </div>
         </div>
       </div>
       <div class="py-8 flex flex-col items-center space-y-1">
@@ -48,11 +37,41 @@
           />
         </div>
       </div>
-      <div class="flex flex-col space-y-12">
+      <div
+        v-if="hasLab"
+        class="p-6 flex flex-col space-y-4 bg-gray-200 dark:bg-gray-800 rounded-3xl"
+      >
+        <p class="prose dark:prose-invert">
+          <b>Importante!</b> Há um <a href="/labs">lab</a> vinculado ao post que você está lendo.
+        </p>
+        <div>
+          <GitHubButton
+            :url="lab?.data.repository_url!"
+            label="Acesse o repositório no GitHub"
+            size="sm"
+          />
+        </div>
+      </div>
+      <div class="py-4 flex flex-col space-y-12">
         <SliceZone
           :slices="article.data.slices"
           :components="components"
         />
+      </div>
+      <div
+        v-if="hasLab"
+        class="p-6 flex flex-col space-y-4 bg-gray-200 dark:bg-gray-800 rounded-3xl"
+      >
+        <p class="prose dark:prose-invert">
+          <b>Apenas lembrando:</b> há um <a href="/labs">lab</a> vinculado ao post que você leu.
+        </p>
+        <div>
+          <GitHubButton
+            :url="lab?.data.repository_url!"
+            label="Acesse o repositório no GitHub"
+            size="sm"
+          />
+        </div>
       </div>
       <div>
         <ArticleComments />
