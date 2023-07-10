@@ -4,6 +4,7 @@
 * [Contact](contact.md)
 * [Work Experience](work-experience.md)
 * [Educational Background](educational-background.md)
+* [Newsletters](newsletters.md)
 
 ## Labs
 
