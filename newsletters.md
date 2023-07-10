@@ -4,9 +4,9 @@ description: Suggestion of newsletters for software engineers.
 
 # Newsletters
 
-I like to subscribe to newsletters in order to stay updated on news in tech and read ideas from sources I like.
+In order to stay updated on tech news and read ideas from sources I like, I have some newsletters that I consistently keep reading.
 
-Below, I recommend some newsletters that I'm subscribed to and I often read.
+Below, I recommend some newsletters that I'm subscribed to and often read.
 
 ## :flag\_us: English
 
