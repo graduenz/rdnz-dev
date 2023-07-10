@@ -18,10 +18,14 @@ Below, I recommend some newsletters that I'm subscribed to and I often read.
 
 ## :flag\_br: Portuguese
 
+Portuguese is my main language, so I also read some content produced in Brazil.&#x20;
+
 * [**Filipe Deschamps**](https://filipedeschamps.com.br/newsletter)**:** Notícias de Tecnologia para quem não tem tempo de ler notícias.
 * [**the news**](https://grow.surf/x5eg0s)**:** as principais notícias do Brasil e do mundo na sua caixa de entrada. perfeitas se acompanhadas de uma boa xícara de café (sem açúcar).
 * [**the bizness**](https://thebizness.substack.com/)**:** seu próximo negócio começa aqui. sua dose de informação sobre o que está acontecendo de mais importante no mercado. relatórios, análises e insights.
 
 ## :flag\_de: German
 
-https://corporate.dw.com/en/newsletter-registration/a-15718229
+I am learning German as well, so I'm into reading news written in German sometimes.
+
+* [**Deutsche Welle**](https://corporate.dw.com/en/newsletter-registration/a-15718229)**:** has many newsletters, but I'm subscribed to all in the Learning German section.
