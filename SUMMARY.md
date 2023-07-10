@@ -1,9 +1,9 @@
 # Table of contents
 
 * [About](README.md)
+* [Contact](contact.md)
 * [Work Experience](work-experience.md)
 * [Educational Background](educational-background.md)
-* [Contact](contact.md)
 
 ## Labs
 
