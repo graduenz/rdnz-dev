@@ -8,6 +8,10 @@ description: Testing ASP.NET Core Web APIs efficiently
 Repository for this page: [https://github.com/graduenz/whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore).
 {% endhint %}
 
+{% hint style="warning" %}
+The application that's used as source code example is being totally refactored to provide a more reusable, close-to-reality set of examples.
+{% endhint %}
+
 ## Introduction
 
 Testing has a huge impact on software development by helping to prevent bugs and ensure the quality of changes in the long term. Good tests, once written, make sure that you didn't break anything existing with your code.

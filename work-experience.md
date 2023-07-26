@@ -1,5 +1,5 @@
 ---
-description: My professional trajectory, detailed in a descending timeline.
+description: My professional trajectory, listed and detailed in a descending timeline
 ---
 
 # Work Experience

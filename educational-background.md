@@ -1,5 +1,5 @@
 ---
-description: All my formal ways of studying, divided by category.
+description: All my formal studies, divided by type
 ---
 
 # Educational Background

@@ -1,5 +1,5 @@
 ---
-description: Find out how to get in touch with me.
+description: Find out how to get in touch with me
 ---
 
 # Contact

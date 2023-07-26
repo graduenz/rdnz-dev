@@ -1,5 +1,5 @@
 ---
-description: Get to know about me.
+description: Getting started! The basics about me
 ---
 
 # About
@@ -10,9 +10,9 @@ Hello!
 
 You can call me Gui.
 
-My name is Guilherme Raduenz, I like to solve real world problems using software engineering and I'm doing this professionally for 10 years now.
+My name is Guilherme Raduenz, I like to solve real world problems using software engineering, and I've been doing this professionally for 10 years now.
 
-I'm currently a Senior Software Engineer at Truelogic and I help their clientes in United States to build and improve their products. 🚀
+I'm currently a Senior Software Engineer at Truelogic and I help their clients in United States to build and improve their products. 🚀
 
 ## What I do
 
@@ -22,6 +22,6 @@ I also have proficiency with JavaScript and TypeScript from recent and regular p
 
 ## What I like
 
-Career talking, my interests are to make a greater impact as a tech lead and work in awesome projects, to share knowledge and experiences with other tech professionals and to continue consistently studying and improving myself everyday.
+Career-wise, my interests are to make a greater impact as a tech lead and work on awesome projects, to share knowledge and experiences with other tech professionals, and to continue consistently studying and improving myself every day.
 
-Personally, I like to spend time with some friends and family, to pet the two dogs I have (a lovely Golden Retriever girl and an absolutely crazy Husky boy) and to get my mind and body healthy by some exercise, yoga, reading books, celebrating, resting enough and traveling.
+Personally, I like to spend time with some friends and family, to pet the two dogs I have (a lovely Golden Retriever girl and an absolutely crazy Husky boy), and to get my mind and body healthy through some exercise, yoga, reading books, celebrating, resting enough, and traveling.
