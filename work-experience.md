@@ -10,9 +10,12 @@ description: My professional trajectory, listed and detailed in a descending tim
 
 **Location:** Remote (USA)
 
-* Back end engineering in a US health technology company product for the PBM industry;
-* Development of new endpoints and services using .NET, C#, AWS, SQL Server, Elastic Search and Redis;
+* Back-end engineering in a US health technology company's product for the PBM industry;
+* Development of new features and services using .NET, C#, AWS, SQL Server, Elastic Search and Redis;
+* Upgrading major versions of third-party dependencies like Elasticsearch and Redis, collaborating with DevOps team;
+* Integration of new vendors/partners into PBM product;
 * Maintenance of existing features to support new requirements and internal changes;
+* HIPAA compliance;
 
 </details>
 
@@ -22,9 +25,9 @@ description: My professional trajectory, listed and detailed in a descending tim
 
 **Location:** Remote (Brazil)
 
-* Back end engineering for the largest online civil construction marketplace in Brazil creating solutions for sellers and customers;
+* Back-end engineering for the largest online civil construction marketplace in Brazil creating solutions for sellers and customers;
 * Development of robust and scalable web apps and microservices using .NET Core, C#, Azure, SQL Server, MongoDB and the ELK stack;
-* Development of services to handle batch files with thousands of lines received from sellers using CAP, RabbitMQ and Kubernetes and EKS;
+* Development of services to handle batch files with thousands of lines received from sellers using CAP, RabbitMQ, and Kubernetes and EKS;
 * Rewrite of an integration platform for sellers that was irregular to a new well-documented and well-standardized API;
 * Upgrade of .NET to newest available LTS versions dealing with high risk breaking changes;
 * Responsible for code reviews and team's code quality;

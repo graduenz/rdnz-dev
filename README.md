@@ -1,5 +1,5 @@
 ---
-description: Getting started! The basics about me
+description: 'Getting started: essentials about me'
 ---
 
 # About
@@ -10,15 +10,15 @@ Hello!
 
 You can call me Gui.
 
-My name is Guilherme Raduenz, I like to solve real world problems using software engineering, and I've been doing this professionally for 10 years now.
+My name is Guilherme Raduenz, I like to solve real-world problems using technology, and I'm a Senior Software Engineer with over 10 years of experience in building software solutions for various domains and industries.
 
-I'm currently a Senior Software Engineer at Truelogic and I help their clients in United States to build and improve their products. 🚀
+I currently work at Truelogic Software, where I help their clients in the US to develop their solutions in health and PBM industry. 🚀
 
 ## What I do
 
-My top hard skills are engineering in the .NET stack: coding in C#, using ASP.NET, Entity Framework, xUnit, etc, alongside tools like Git, Docker, SQL and NoSQL databases, CI/CD tools and knowledge in design patterns and many architectural matters.
+My core competencies include back end engineering, web apps, microservices, testing, design patterns and the .NET platform (C#, ASP.NET, Entity Framework, and more). I also have experience in working with Node.js, TypeScript, Vue.js, CAP, RabbitMQ, Kubernetes, Elasticsearch, and other technologies.
 
-I also have proficiency with JavaScript and TypeScript from recent and regular personal projects, as well as some jobs I had in the past, specially creating Vue.js front end apps.
+I enjoy learning new skills and tools, sharing my knowledge with others, and solving real problems with software engineering. My goal is to make more impact to the community, the company and the global market with my career, build cool projects and products, and be always happy doing cool things with my family and friends.
 
 ## What I like
 
