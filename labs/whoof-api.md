@@ -6,9 +6,9 @@ description: >-
 
 # Whoof API
 
-Whoof API is a simple API to control pet vaccination, a project created for educational purposes to both learn how REST APIs can be implemented in different programming languages/frameworks and to bring discussions to this website and other places.
+Whoof API is a simple API to control pet vaccination, a project created with educational purposes to both learn how REST APIs can be implemented in different programming languages and frameworks and to bring discussions to this website and other places.
 
-The ASP.NET Core version is being used as the source application to practice with some tools like Auth0, Terraform, AWS, Docker, GitHub Actions, some not yet chosen monitoring tools, and more.
+The ASP.NET Core version is likely to be the most complete one, being used as the source application to practice with some tools like Auth0, GitHub Actions, Grafana, and more. Please take a look at [the docs](https://github.com/graduenz/whoof-aspnetcore).
 
 Below, you can see a list of the framework being used and the repository where it's implemented. If the repository is missing, the implementation has not been done yet.
 
