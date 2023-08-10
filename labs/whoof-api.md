@@ -14,4 +14,6 @@ Below, you can see a list of the framework being used and the repository where i
 
 <table><thead><tr><th width="168">Framework</th><th width="121.33333333333331">Language</th><th width="358">Repository</th><th data-type="select">Status</th></tr></thead><tbody><tr><td>ASP.NET Core</td><td>C#</td><td><a href="https://github.com/graduenz/whoof-aspnetcore">https://github.com/graduenz/whoof-aspnetcore</a></td><td></td></tr><tr><td>NestJS</td><td>TypeScript</td><td><a href="https://github.com/graduenz/whoof-nestjs">https://github.com/graduenz/whoof-nestjs</a></td><td></td></tr><tr><td>AdonisJS</td><td>TypeScript</td><td>By Q3 2023</td><td></td></tr><tr><td>Gin</td><td>Go</td><td>By Q4 2023</td><td></td></tr><tr><td>Chi</td><td>Go</td><td>By Q4 2023</td><td></td></tr><tr><td>Flask</td><td>Python</td><td>By Q1 2024</td><td></td></tr><tr><td>FastAPI</td><td>Python</td><td>By Q1 2024</td><td></td></tr></tbody></table>
 
+{% hint style="info" %}
 A front end application is being parallelly developed.
+{% endhint %}
