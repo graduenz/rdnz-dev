@@ -29,15 +29,9 @@ If you are a Windows user, I recommend you install WSL2 first, then go to the Do
 
 ## Sample ASP.NET Core project
 
-In this guide, we are going to use [whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore) as the project to be tested, a simple implementation of a pet vaccination REST API. Please [open the project in github.dev](https://github.dev/graduenz/whoof-aspnetcore/) and take a quick look at the project structure, you will see that we have the following folders:
+In this guide, we are going to use [whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore) as the project to be tested, a simple implementation of a pet vaccination REST API. Please [open the project in github.dev](https://github.dev/graduenz/whoof-aspnetcore/) and take a quick look at the project structure so you get familiar with it.
 
-* **Entities** containing EF Core entities;
-* **Persistence** with persistence objects (EF Core DbContext);
-* **Controllers** with the Web API controllers;
-* **Models** with common models used alongside API contracts;
-* **Validators** with validation implementations using FluentValidation.
-
-The `BaseCrudController` class is a generic base class for every controller containing some premade CRUD endpoints, which are the endpoints that we will test in our test project:
+However, the most important thing at the moment is the `BaseCrudController` class, which is a generic base class for every controller containing some premade CRUD endpoints, which are the endpoints that we will test in our test project:
 
 ```
 GET    /v1/pets
@@ -47,21 +41,24 @@ PUT    /v1/pets/{id}
 DELETE /v1/pets/{id}
 ```
 
-## Testing
+Also, the `PetVaccinationController` is a little bit different, omitting the `GET /` method and introducing `GET /pet/{id}` instead.
 
-Before we start with the test project, let's list some important points:
+## Implementing the test project
 
-* We will use xUnit as the test framework;
-* We will not write unit tests; we will go straight to integration tests;
-* API tests will be real HTTP calls using an `HttpClient`;
-* We will deploy every API dependency using Docker Compose, in this case, it's only a PostgreSQL instance as the database;
-  * If we had more dependencies like Redis or Elasticsearch, we should do the same;
-  * We could make use of mocks, but that would be the case for unit testing - for integration tests, we want the test environment as close as possible to the production environment;
+Let's take a look at some important points for the test project:
+
+* We will use xUnit as the test framework.
+* We will not write unit tests, only integration tests for the API.
+* API tests will be real HTTP calls using an `HttpClient`.
+* We will run every API dependency using Docker Compose - in this case, it's only a PostgreSQL instance.
+  * If we had more dependencies like Redis or Elasticsearch, we should do the same.
+  * You will notice it has Grafana, Loki and Promtail in the services list, however, the test project won't use it, it's only used for debugging.
+  * We could make use of mocks, but that would be the case for unit testing; for integration tests, **we want the test environment as close as possible to the production environment**.
 * Each test will generate an exclusive database, run the test and delete it after test execution.
 
 ### **Docker Compose**
 
-We need a `docker-compose.yml` file at the repository's root, containing all dependencies for our project. In this case, only a PostgreSQL instance is enough, like the one present in our project.
+First thing: we need a `docker-compose.yml` file at the repository's root, containing all dependencies for our project. In this case, only a PostgreSQL instance is enough, like the one present in our project. Take in mind some actual dependencies in the project are not present in the sample below:
 
 ```yaml
 version: "3.8"
@@ -91,11 +88,13 @@ docker-compose up -d
 docker-compose down
 ```
 
-It is also great for debugging. Instead of installing every dependency on your computer and running the project, you can leave it to Docker Compose.
+{% hint style="info" %}
+This is also great for debugging. Instead of installing every dependency on your computer and running the project, you can leave it to Docker Compose.
+{% endhint %}
 
 ### Connection string
 
-Next step after we have our `docker-compose.yml` file ready is to set the connection string in both API and test project `appsettings.json` file, like the example below:
+Next step, after we have our `docker-compose.yml` file ready, is to set the connection string in both API and test project `appsettings.json` file. See the example below:
 
 ```diff
 {
@@ -112,7 +111,7 @@ Next step after we have our `docker-compose.yml` file ready is to set the connec
 }
 ```
 
-Please note the connection string name is AppDbContext. In your application, where EF Core is configured, set that named connection string as well.
+Please note the connection string name is AppDbContext. In your application, where EF Core is configured, set that named connection string as well. It can be whatever name you want, they just have to match.
 
 ```csharp
 // <IServiceCollection reference>
@@ -127,7 +126,7 @@ Please note the connection string name is AppDbContext. In your application, whe
 
 ### WebApplicationFactory
 
-`WebApplicationFactory` is a class in `Microsoft.AspNetCore.Mvc.Testing` package that enables us to create a real application to be used for testing. We can either use it directly in our tests or create an implementation by inheriting it with our own configuration. I prefer to create another class and do some config, like the example below, which is present in the project:
+`WebApplicationFactory` is a class in `Microsoft.AspNetCore.Mvc.Testing` package that enables us to create a real application instance to be used for testing. We can either use it directly in our tests or create an implementation by inheriting it with our own configuration. I prefer the second option, to create another class and do some config, like the example below, which is present in the project:
 
 ```csharp
 public class TestWebApplicationFactory<TProgram>
@@ -144,6 +143,7 @@ public class TestWebApplicationFactory<TProgram>
     {
         var configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json")
+            .AddJsonFile("appsettings.Testing.json")
             .AddEnvironmentVariables()
             .Build();
 
@@ -154,7 +154,7 @@ public class TestWebApplicationFactory<TProgram>
             ReplaceDbConnectionString(services, configuration);
         });
 
-        builder.UseEnvironment("Development");
+        builder.UseEnvironment("Testing");
     }
 
     private void ReplaceDbConnectionString(IServiceCollection services, IConfiguration configuration)
@@ -164,42 +164,61 @@ public class TestWebApplicationFactory<TProgram>
                  typeof(DbContextOptions<AppDbContext>));
 
         services.Remove(dbContextDescriptor);
-
-        var connstrBuilder = new DbConnectionStringBuilder();
-        connstrBuilder.ConnectionString = configuration["ConnectionStrings:AppDbContext"];
-        connstrBuilder["Database"] = _exclusiveDbName;
         
         services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(connstrBuilder.ConnectionString)
-        );
+        {
+            var connstrBuilder = new DbConnectionStringBuilder();
+            connstrBuilder.ConnectionString = configuration["ConnectionStrings:AppDbContext"];
+            connstrBuilder["Database"] = _exclusiveDbName;
+            options.UseNpgsql(connstrBuilder.ConnectionString);
+        });
     }
 }
 ```
 
-Some considerations:
+See that:
 
-* A generic `TProgram` is used in the class, which is the application to be run - in this case, the Whoof.Api project;
-* In the constructor, it receives a string that is the exclusive database name for the test being executed (requirement described above);
-* In the `ConfigureWebHost` method override, we read the application settings file, then replace the connection string by changing the database name to the one received in the constructor;
+* A generic `TProgram` is used in the class, which is the application to be run - in this case, the Whoof.Api project.
+* In the constructor, it receives a string that is the exclusive database name for the test being executed (requirement described above).
+* In the `ConfigureWebHost` method override, we read the application settings file, then replace the connection string by changing the database name to the one received in the constructor.
 
 ### Base test class
 
-Another thing that will help us write integration tests is to have a base class with everything that is required in testing, since creating the test database, loading predefined data into it, doing dependency resolution, and removing the database after the test is run. Take a look at the example that is used in the project:
+Another thing that will help us write integration tests is to have a base class with everything that is required in testing, from creating the test database, loading predefined data into it, doing dependency resolution, to removing the database after the test runs. Take a look at the project's example:
 
 ```csharp
 public abstract class BaseControllerTests : IDisposable
 {
+    private static JsonSerializerOptions BuildJsonOptions()
+    {
+        var jsonOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web);
+        jsonOptions.Converters.Add(new JsonStringEnumConverter());
+
+        return jsonOptions;
+    }
+    
     protected BaseControllerTests()
     {
+        JsonOptions = BuildJsonOptions();
+        
         ExclusiveDbName = $"whoof_{Guid.NewGuid()}";
         TestWebApplicationFactory<Program> factory = new(ExclusiveDbName);
         
         HttpClient = factory.CreateClient();
         ServiceScope = factory.Services.CreateScope();
         DbContext = ServiceScope.ServiceProvider.GetRequiredService<AppDbContext>();
+        Mapper = ServiceScope.ServiceProvider.GetRequiredService<IMapper>();
         
         InitializeDatabase();
     }
+
+    public JsonSerializerOptions JsonOptions { get; }
+    public string ExclusiveDbName { get; }
+    protected HttpClient HttpClient { get; }
+    protected IServiceScope ServiceScope { get; }
+    protected AppDbContext DbContext { get; }
+    protected IMapper Mapper { get; }
+    protected IServiceProvider ServiceProvider => ServiceScope.ServiceProvider;
 
     private void InitializeDatabase()
     {
@@ -212,12 +231,6 @@ public abstract class BaseControllerTests : IDisposable
     {
         DbContext.Database.EnsureDeleted();
     }
-
-    public string ExclusiveDbName { get; }
-    protected HttpClient HttpClient { get; }
-    protected IServiceScope ServiceScope { get; }
-    protected AppDbContext DbContext { get; }
-    protected IServiceProvider ServiceProvider => ServiceScope.ServiceProvider;
 
     protected virtual void Dispose(bool disposing)
     {
@@ -237,10 +250,15 @@ public abstract class BaseControllerTests : IDisposable
 }
 ```
 
-Some considerations:
+See that:
 
-* In the constructor, we generate the exclusive database name for the test, we create an instance of the web application factory and create the `HttpClient` from it, as well as we set the `IServiceScope` to resolve other required dependencies;
-* In `Dipose` method, when the test ends, we make sure the database is removed and we also dispose of all our class dependencies (take note it must implement `IDisposable`).
+* In the constructor, we:
+  * Set up the JSON serializer settings that will be reused in tests.
+  * Generate the exclusive database name for the test.
+  * Create an instance of the web application factory.
+  * Create the `HttpClient` from it.
+  * And set the `IServiceScope` to resolve other required dependencies.
+* In `Dipose` method, when the test ends, we make sure the database is removed and we also dispose of all our class dependencies (it must implement `IDisposable`).
 
 ### Patterns
 
