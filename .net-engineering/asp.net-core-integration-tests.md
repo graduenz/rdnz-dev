@@ -262,28 +262,28 @@ See that:
 
 ### Patterns
 
-With both classes above created, we can now start writing tests. Before going into it, let's quickly introduce some matters about test patterns.
+With both classes created, we can now start writing tests. But... before, let's quickly introduce some important matters.
 
 #### Naming convention
 
-To easily know what a test should do and expect, it's important to define a naming convention for the project. In this project, the following naming is used: `MethodName_StateInTest_ExpectedResult`. Take a look at some examples:
+To easily know what a test should do and what to expect, it's important to define a naming convention for the test methods. In this project, the following naming convention is used: `MethodName_StateInTest_ExpectedResult`. Some examples:
 
-* `AddOneAsync_WithInvalidData_DoesntAdd`: makes sure `AddOneAsync` really doesn't add anything when data is invalid;
-* `UpdateOneAsync_WithValidData_UpdatesAsExpected`: makes sure `UpdateOneAsync` really updates the entity when data is valid;
+* `AddOneAsync_WithInvalidData_DoesntAdd`: makes sure `AddOneAsync` really doesn't add anything when data is invalid.
+* `UpdateOneAsync_WithValidData_UpdatesAsExpected`: makes sure `UpdateOneAsync` really updates the entity when data is valid.
 
 #### AAA pattern
 
-The AAA pattern is common in test implementation and it is about the test method structure, expecting three steps: (A)rrange, (A)ct, and (A)ssert.
+The AAA pattern is very popular in software testing and it standardize the test method structure with three steps: (A)rrange, (A)ct, and (A)ssert.
 
-* Arrange is a step to, literally, arrange the test scenario, define values in variables, modify data, setup mocks, etc.;
-* Act is, ideally, one single line of code doing the test action, like calling the method of the class being tested;
-* Assert is a step to ensure the results are the same as we expect, verifying the returned value from the method called, the presence or absence of errors, the returned HTTP status code, and more.
+* **Arrange** is a step to, literally, arrange the test scenario, define values in variables, modify data, setup mocks, etc.
+* **Act** is, ideally, one single line of code doing the test action, like calling the method of the class being tested.
+* **Assert** is a step to ensure the results are the ones we expect, verifying the returned value from the method called, the presence or absence of errors, the returned HTTP status code, and more.
 
 #### FluentAssertions
 
 `FluentAssertions` is a NuGet package available to write better assertions in the Assert section of our tests, making them easier to write and read.
 
-### Test method
+### The first test method
 
 To see everything in place, let's see an example of a test method. Note the base class usage, the naming convention, the AAA pattern, and the usage of FluentAssertions in the end.
 
