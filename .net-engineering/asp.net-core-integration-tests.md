@@ -5,20 +5,16 @@ description: Testing ASP.NET Core Web APIs efficiently
 # ASP.NET Core Integration Tests
 
 {% hint style="info" %}
-Repository for this page: [https://github.com/graduenz/whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore).
-{% endhint %}
-
-{% hint style="warning" %}
-The application that's used as source code example is being totally refactored to provide a more reusable, close-to-reality set of examples.
+Take a look at the GitHub repository: [https://github.com/graduenz/whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore)
 {% endhint %}
 
 ## Introduction
 
 Testing has a huge impact on software development by helping to prevent bugs and ensure the quality of changes in the long term. Good tests, once written, make sure that you didn't break anything existing with your code.
 
-When mentoring junior developers, if they ask me for advice on how to become better, one thing I always recommend is to learn unit testing, understand and get familiar with the test framework, understand test writing practices, and understand what makes a test good. And! Review pull requests from senior developers; they are expected to write good tests, and you can learn from them.
+When mentoring new developers, if they ask me for advice on how to become better at coding, one thing I always recommend is to learn unit testing, understand and get familiar with the test framework, understand test writing practices, and understand what makes a test good. And! Review pull requests from more experienced developers; they are expected to write good tests, and you can learn from them.
 
-As well as monitoring and observability, good testing ensures that after your code is delivered and used, it's working properly, without requiring explicit user feedback.
+As well as monitoring and observability, good testing ensures that, after your code is deployed, the software will work properly, without requiring explicit user feedback.
 
 ## Requirements
 
@@ -33,7 +29,7 @@ If you are a Windows user, I recommend you install WSL2 first, then go to the Do
 
 ## Sample ASP.NET Core project
 
-We are going to use [whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore) as the project to be tested, a simple implementation of a pet vaccination REST API. Please [open the project in github.dev](https://github.dev/graduenz/whoof-aspnetcore/) and take a quick look at the project structure, you will see that we have the following folders:
+In this guide, we are going to use [whoof-aspnetcore](https://github.com/graduenz/whoof-aspnetcore) as the project to be tested, a simple implementation of a pet vaccination REST API. Please [open the project in github.dev](https://github.dev/graduenz/whoof-aspnetcore/) and take a quick look at the project structure, you will see that we have the following folders:
 
 * **Entities** containing EF Core entities;
 * **Persistence** with persistence objects (EF Core DbContext);
