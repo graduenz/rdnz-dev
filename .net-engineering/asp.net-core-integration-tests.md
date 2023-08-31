@@ -325,6 +325,7 @@ A summary of what we went through in this guide:
 
 * We can use real dependencies to run our application's tests against.
 * Docker and Docker Compose help a lot with that.
+* We can use a real HTTP client to test the controllers.
 * Setting up `WebApplicationFactory`.
 * Setting up a base class for API tests.
 * Defining a naming convention for the tests' names.
