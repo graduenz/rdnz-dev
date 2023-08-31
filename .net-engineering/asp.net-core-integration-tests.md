@@ -323,8 +323,8 @@ You can take a look at the entire `PetsControllerTests` class in the repository 
 
 A summary of what we went through in this guide:
 
-* We can use real dependencies to run our application's tests.
-* Docker and Docker Compose help with the statement above.
+* We can use real dependencies to run our application's tests against.
+* Docker and Docker Compose help a lot with that.
 * Setting up `WebApplicationFactory`.
 * Setting up a base class for API tests.
 * Defining a naming convention for the tests' names.
