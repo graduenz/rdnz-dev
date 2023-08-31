@@ -1,5 +1,5 @@
 ---
-description: 'Getting started: essentials about me'
+description: Getting started
 ---
 
 # About
@@ -8,7 +8,7 @@ description: 'Getting started: essentials about me'
 
 Hello!
 
-You can call me Gui.
+You can call me Gui, my brain automatically responds to that nickname.
 
 My name is Guilherme Raduenz, I like to solve real-world problems using technology, and I'm a Senior Software Engineer with over 10 years of experience in building software solutions for various domains and industries.
 
