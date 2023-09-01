@@ -8,7 +8,7 @@
 
 ## Labs
 
-* [Whoof API](labs/whoof-api.md)
+* [Whoof](labs/whoof-api.md)
 
 ## .NET Engineering
 
