@@ -1,7 +1,7 @@
 ---
 description: >-
-  Follow this guide to get free, automatic static code analysis for your .NET
-  project on GitHub
+  A guide to get free static code analysis for your public .NET projects on
+  GitHub
 ---
 
 # Code analysis with SonarCloud and GitHub Actions
