@@ -285,7 +285,10 @@ Until this point, you've seen how to set up the whole process of static code ana
 
 ### Where did I learn that from
 
-Coming soon :)
+There are two former coworkers that contributed on building this whole setup and made everything easier.
+
+* [**Rafael Miranda**](https://github.com/rafaelpadovezi): he is the author of [Ziggurat](https://github.com/rafaelpadovezi/Ziggurat), a .NET library to create message consumers that makes easy to implement idempotency, with built-in support to SQL Server and MongoDB, and the [DotNetCore.CAP](https://github.com/dotnetcore/CAP) library. His repository has helped a lot because it's where I got the scripts from.
+* [**Willian Antunes**](https://github.com/willianantunes): if you noticed the `set -eu -o pipefail` in the scripts, I got that from a post in his blog: [Production-ready shell startup scripts: The Set Builtin](https://www.willianantunes.com/blog/2021/05/production-ready-shell-startup-scripts-the-set-builtin/). It modifies the shell behavior on how to deal with errors.
 
 ### Pull request requirements
 
