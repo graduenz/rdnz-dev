@@ -290,10 +290,44 @@ There are two former coworkers that contributed on building this whole setup and
 * [**Rafael Miranda**](https://github.com/rafaelpadovezi): he is the author of [Ziggurat](https://github.com/rafaelpadovezi/Ziggurat), a .NET library to create message consumers that makes easy to implement idempotency, with built-in support to SQL Server and MongoDB, and the [DotNetCore.CAP](https://github.com/dotnetcore/CAP) library. His repository has helped a lot because it's where I got the scripts from.
 * [**Willian Antunes**](https://github.com/willianantunes): if you noticed the `set -eu -o pipefail` in the scripts, I got that from a post in his blog: [Production-ready shell startup scripts: The Set Builtin](https://www.willianantunes.com/blog/2021/05/production-ready-shell-startup-scripts-the-set-builtin/). It modifies the shell behavior on how to deal with errors.
 
-### Pull request requirements
+### Branch protection rules
 
-Coming soon :)
+A common practice is to protect your branch(es) from direct commits, and requiring pull requests to merge them into the branch, as well as adding some requirements to the pull requests before merging.
+
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption><p>Click <strong>Add branch protection rule</strong></p></figcaption></figure>
+
+In the example below, it has been set up to:
+
+* Require a pull request before merging
+  * And must have, at least, 2 approvals
+* Require status checks
+  * You must select the status checks, just type "sonar" in the text field below and select **SonarCloud Code Analysis**.
+* Require conversation resolutions before merging
+  * If someone comments in your PR, the comment must be resolved before merging
+
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+This will protect and improve the whole software development process, making sure nothing broken gets pushed to main branch without prior review and agreement.
 
 ### Disabling a rule in a class
 
-Coming soon :)
+In my project, something that I needed was to suppress some code smells that were detected by the code analysis. In a regular coding task that is not ideal; however, the example below is a class that has many generic arguments, much more than the two authorized, but is part of the abstractions, reason why I considered it acceptable.
+
+```csharp
+namespace Whoof.Api.Common.Controllers;
+
+[SuppressMessage("SonarLint", "S2436", Justification = "Abstraction tradeoffs")]
+public abstract class BaseCrudController
+    <TDto, TEntity, TCreateCommand, TUpdateCommand, TDeleteCommand, TGetByIdQuery, TGetListQuery, TSearch>
+    : ControllerBase
+    where TDto : BaseDto
+    where TEntity : class
+    where TCreateCommand : BaseCreateCommand<TDto>, new()
+    where TUpdateCommand : BaseUpdateCommand<TDto>, new()
+    where TDeleteCommand : BaseDeleteCommand<TDto>, new()
+    where TGetByIdQuery : BaseGetByIdQuery<TDto>, new()
+    where TGetListQuery : BaseGetListQuery<TDto, TEntity>, new()
+    where TSearch : BaseSearch<TEntity>
+```
+
+The `SuppressMessage` attribute can suppress the accusation of an issue, in this case, the S2436 rule, with proper justification.
