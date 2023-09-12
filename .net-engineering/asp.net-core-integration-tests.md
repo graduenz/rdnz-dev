@@ -1,5 +1,5 @@
 ---
-description: Testing ASP.NET Core Web APIs efficiently
+description: Testing ASP.NET Core Web APIs effectively
 ---
 
 # ASP.NET Core Integration Tests
