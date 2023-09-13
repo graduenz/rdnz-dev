@@ -2,6 +2,22 @@
 description: >-
   A guide to get free static code analysis for your public .NET projects on
   GitHub
+cover: ../.gitbook/assets/Code analysis with SonarCloud and GitHub Actions.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Code analysis with SonarCloud and GitHub Actions
