@@ -38,19 +38,6 @@ description: My professional trajectory, listed and detailed in a descending tim
 
 <details>
 
-<summary>Full Stack Engineer @ Trulogic Technology for Innovation (2021)</summary>
-
-**Location:** Remote (Brazil)
-
-* Development of new features to support physicians writing medical reports on a telemedicine web application using C#, ASP.NET Core, Node.js and Vue.js;
-* Development of a feature to help physicians to analyze an exam image (X-ray) with help of an existing AI's insights;
-* Writing unit tests for the implemented features;
-* Designing database schema changes in order to support new features.
-
-</details>
-
-<details>
-
 <summary>Software Developer @ Quick Soft Tecnologia (2014-2020)</summary>
 
 **Location:** Blumenau, Santa Catarina (Brazil)
