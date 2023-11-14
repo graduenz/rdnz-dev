@@ -12,7 +12,7 @@ You can call me Gui, and my name is Guilherme Augusto Raduenz.
 
 I like to solve real-world problems using technology, and I'm a Senior Software Engineer with over 10 years of experience in building software solutions for various domains and industries.
 
-I'm currently working at Truelogic Software, where I help their clients in the US to develop their solutions in healthcare and PBM industry. 🚀
+I'm currently working at an IT service management company, where I help their clients in US to develop their solutions in healthcare and PBM industry. 🚀
 
 ## What I do
 
