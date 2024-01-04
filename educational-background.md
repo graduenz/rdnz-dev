@@ -1,8 +1,8 @@
 ---
-description: All my formal studies, divided by type
+description: All my formal studies and certifications
 ---
 
-# Educational Background
+# Education & Certifications
 
 ## Courses
 

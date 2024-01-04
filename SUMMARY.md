@@ -3,7 +3,7 @@
 * [About](README.md)
 * [Contact](contact.md)
 * [Work Experience](work-experience.md)
-* [Educational Background](educational-background.md)
+* [Education & Certifications](educational-background.md)
 * [Newsletters](newsletters.md)
 
 ## Labs
