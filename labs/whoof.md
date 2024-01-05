@@ -4,7 +4,7 @@ description: A simple pet vaccination application with a variety of learning pur
 
 # Whoof
 
-Whoof is a simple software project of an application to control pet vaccination, created with the main purpose of learning how REST APIs can be implemented in different programming languages and frameworks to enrich my technical repertoire, but also:
+Whoof is a simple software project of an application to control pet vaccination, created with the **main purpose of learning how REST APIs can be implemented in different programming languages and frameworks to enrich my technical repertoire**, but also:
 
 * Get hands-on practice with popular tools used in software engineering.
 * Make it publicly available somehow. It's currently on AWS EC2 with CapRover (BE, .NET version) and Vercel (FE).
