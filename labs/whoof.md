@@ -29,3 +29,9 @@ Below, you can see a list of the backend versions that are part of this lab, inc
 
 <table><thead><tr><th width="252">Tech</th><th width="121.33333333333331">Language</th><th width="250">Repository</th><th data-type="select">Status</th></tr></thead><tbody><tr><td><span data-gb-custom-inline data-tag="emoji" data-code="1f525">🔥</span> ASP.NET Core + EF Core</td><td>C#</td><td><a href="https://github.com/graduenz/whoof-aspnetcore">https://github.com/graduenz/whoof-aspnetcore</a></td><td></td></tr><tr><td>NestJS + Prisma</td><td>TypeScript</td><td><a href="https://github.com/graduenz/whoof-nestjs">https://github.com/graduenz/whoof-nestjs</a></td><td></td></tr><tr><td>AdonisJS + TypeORM</td><td>TypeScript</td><td>By Q1 2024</td><td></td></tr><tr><td>Gin</td><td>Go</td><td>By Q1/Q2 2024</td><td></td></tr><tr><td>Chi</td><td>Go</td><td>By Q1/Q2 2024</td><td></td></tr><tr><td>Flask</td><td>Python</td><td>By Q2/Q3 2024</td><td></td></tr><tr><td>FastAPI</td><td>Python</td><td>By Q2/Q3 2024</td><td></td></tr></tbody></table>
 
+***
+
+## Frontends
+
+<table><thead><tr><th width="385">Tech</th><th width="258">Repository</th><th data-type="select">Status</th></tr></thead><tbody><tr><td>React + Refine on Vercel</td><td><a href="https://github.com/graduenz/whoof-web">https://github.com/graduenz/whoof-web</a></td><td></td></tr><tr><td><em>&#x3C;future mobile app></em></td><td></td><td></td></tr></tbody></table>
+
