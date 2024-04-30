@@ -35,5 +35,5 @@ description: All my formal studies and certifications
 </details>
 
 {% hint style="info" %}
-**Random fact:** from 2016 to 2018, I also completed 5 of 9 semesters of Computer Science (Bachelor's degree), but didn't finish the course and switched to an Associate's one due to personal reasons. If I were able to go back in time and finish it, I would.
+**Curious fact:** from 2016 to 2018, I also completed 5 of 9 semesters of Computer Science (Bachelor's degree), but didn't finish the course and switched to an Associate's one due to personal reasons. Sometimes I think maybe I should have completed it.
 {% endhint %}
