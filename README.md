@@ -15,7 +15,7 @@ You can call me Gui like everyone else; my name is Guilherme Augusto Raduenz.
 * Most of the people call me Gui - pronounced as "give" without the "ve".
 * Born and living in Brazil [![Brazil](https://github.com/graduenz/graduenz/raw/main/br.png)](https://github.com/graduenz/graduenz/blob/main/br.png).
 
-## What I do
+## Work
 
 My core competencies include backend engineering, building web apps, microservices, testing, design patterns, and the .NET platform (C#, ASP.NET, Entity Framework, and more). I also have experience working with Node.js, TypeScript, Vue.js, CAP, RabbitMQ, Kubernetes, Elasticsearch, and other technologies.
 
