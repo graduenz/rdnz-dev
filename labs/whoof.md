@@ -1,7 +1,3 @@
----
-description: A simple pet vaccination application with a variety of learning purposes
----
-
 # Whoof
 
 Whoof is a simple software project of an application to control pet vaccination, created with the **main purpose of learning how REST APIs can be implemented in different programming languages and frameworks to enrich my technical repertoire**, but also:
