@@ -17,16 +17,6 @@ You can call me Gui like everyone else; my name is Guilherme Augusto Raduenz.
 
 ## Work
 
-My core competencies include backend engineering, building web apps, microservices, testing, design patterns, and the .NET platform (C#, ASP.NET, Entity Framework, and more). I also have experience working with Node.js, TypeScript, Vue.js, CAP, RabbitMQ, Kubernetes, Elasticsearch, and other technologies.
+I work mainly with the .NET stack and some popular tools like SQL databases, MongoDB, Redis, Elasticsearch, Docker, GitHub Actions, and more. My current focus is on back end engineering, and I'm also into some DevOps / automation / infrastructure as an enthusiast.
 
-I enjoy learning new things and knowing new tools, sharing my knowledge with others, and solving real problems with software engineering, globally.
-
-## What I like
-
-Career-wise, my interests are to make the greatest positive impact as possible and work on awesome projects, to share knowledge and experiences with other tech professionals, and to continue consistently studying and improving myself every day.
-
-Personally, I like to spend time with friends and family, to pet the two dogs I have (I have two big ones), and to get my mind clear and my body healthy through lifting weights, practicing yoga, reading books and articles, celebrating, resting enough, and traveling.
-
-I used to go camping and hiking when I was younger, so this is something on the roadmap for 2024 :)
-
-I'm pretty sure there's a lot more, but that is what matters most.
+You will see more information on my [LinkedIn profile](https://www.linkedin.com/in/graduenz/) and on [work-experience.md](work-experience.md "mention").
