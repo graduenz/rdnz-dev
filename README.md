@@ -10,7 +10,10 @@ Hello!
 
 You can call me Gui like everyone else; my name is Guilherme Augusto Raduenz.
 
-I like to code things and I'm a software engineer with over 10 years of experience in building software solutions for various domains and industries. Please check [work-experience.md](work-experience.md "mention")to see where and what I've been working on, or [Broken link](broken-reference "mention")to see what are the things I do for fun or learning.
+* I have been coding for 10+ years - since 2011.
+* Besides work, I also like coding some stuff to try different tech, programming languages, etc.
+* Most of the people call me Gui - pronounced as "give" without the "ve".
+* Born and living in Brazil [![Brazil](https://github.com/graduenz/graduenz/raw/main/br.png)](https://github.com/graduenz/graduenz/blob/main/br.png).
 
 ## What I do
 
